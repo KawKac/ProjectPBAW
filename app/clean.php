@@ -17,18 +17,9 @@
 			$registry = @file_get_contents("/registry.php");
 		?>
 		<script type="text/javascript">
-		    function home()
-        {
-          document.getElementById('id')
-        }
-        function login()
-        {
-
-        }
-        function registry()
-        {
-
-        }
+		    function home(){document.getElementById('intro').innerHTML = "<?php echo $home; ?>";}
+        function login(){document.getElementById('intro').innerHTML = "<?php echo $login; ?>";}
+        function registry(){document.getElementById('intro').innerHTML = "<?php echo $registry; ?>";}
 		</script>
 	</head>
 	<body class="is-preload">
@@ -49,8 +40,8 @@
 		<!-- Wrapper -->
 			<div id="wrapper">
 
-					<section id="intro" class="wrapper style1 fullscreen fade-up">
-						<div class="inner">
+					<section class="wrapper style1 fullscreen fade-up">
+						<div class="inner" id="intro">
 
 						</div>
 					</section>
