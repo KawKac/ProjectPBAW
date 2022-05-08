@@ -16,11 +16,6 @@
 			$login = @file_get_contents("/login.php");
 			$registry = @file_get_contents("/registry.php");
 		?>
-		<script type="text/javascript">
-		    function home(){document.getElementById('intro').innerHTML = "<?php echo $home; ?>";}
-        function login(){document.getElementById('intro').innerHTML = "<?php echo $login; ?>";}
-        function registry(){document.getElementById('intro').innerHTML = "<?php echo $registry; ?>";}
-		</script>
 	</head>
 	<body class="is-preload">
 
@@ -29,9 +24,9 @@
 				<div class="inner">
 					<nav>
 						<ul>
-							<li><a onclick="home()" >Welcome</a></li>
-							<li><a onclick="login()" >Zaloguj</a></li>
-							<li><a onclick="registry()" >Zarejestruj się</a></li>
+							<li><a href="#" id="0">Welcome</a></li>
+							<li><a href="#" id="1">Zaloguj</a></li>
+							<li><a href="#" id="2">Zarejestruj się</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -68,5 +63,6 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assents/js/navbarcontrol.js"></script>
 	</body>
 </html>
