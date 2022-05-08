@@ -52,5 +52,10 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/navbarcontrol.js"></script>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					$("#intro").load("app/home.php")
+				});
+			</script>
 	</body>
 </html>
