@@ -15,3 +15,9 @@ $("#2").click(function()
     $("#intro").html("");
     $("#intro").load("app/registry.php");
   });
+
+  $("#3").click(function()
+    {
+      $("#intro").html("");
+      $("#intro").load("app/delivery.php");
+    });
