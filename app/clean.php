@@ -11,11 +11,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<?php
-			$home = @file_get_contents("/home.php");
-			$login = @file_get_contents("/login.php");
-			$registry = @file_get_contents("/registry.php");
-		?>
 	</head>
 	<body class="is-preload">
 
@@ -34,14 +29,9 @@
 
 		<!-- Wrapper -->
 			<div id="wrapper">
+					<section class="wrapper style1 fullscreen fade-up" id="intro">
 
-					<section class="wrapper style1 fullscreen fade-up">
-						<div class="inner" id="intro">
-
-						</div>
 					</section>
-
-
 			</div>
 
 		<!-- Footer -->
@@ -56,13 +46,11 @@
 			</footer>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			<script src="assents/js/navbarcontrol.js"></script>
+			<script src="assets/js/navbarcontrol.js"></script>
 	</body>
 </html>

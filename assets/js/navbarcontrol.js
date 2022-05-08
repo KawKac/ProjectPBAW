@@ -1,4 +1,17 @@
-$("0").click(function()
+$("#0").click(function()
   {
-    $("intro").html("");
+    $("#intro").html("");
+    $("#intro").load("app/home.php");
+  });
+
+$("#1").click(function()
+  {
+    $("#intro").html("");
+    $("#intro").load("app/login.php");
+  });
+
+$("#2").click(function()
+  {
+    $("#intro").html("");
+    $("#intro").load("app/registry.php");
   });

@@ -6,3 +6,9 @@
     `);
   }
 </script>
+
+<section>
+  <div class="">
+    To jest home
+  </div>
+</section>
