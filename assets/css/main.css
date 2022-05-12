@@ -3923,3 +3923,15 @@ a.white_font:hover
 {
 	color: #D9B89C;
 }
+
+h2.h2_center
+{
+	text-align: center;
+}
+
+.hr_dashed
+{
+	border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75));
+}

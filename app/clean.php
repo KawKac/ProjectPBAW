@@ -6,7 +6,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 <?php
-foreach (glob("assets/css/*.css") as $filename) echo "<link rel='stylesheet' href='$filename'>";
+foreach (glob("assets/css/*.css") as $filename) echo "<link rel='stylesheet' href='$filename'>\n";
 ?>
 	</head>
 	<body class="is-preload">
@@ -41,7 +41,7 @@ foreach (glob("assets/css/*.css") as $filename) echo "<link rel='stylesheet' hre
 			</footer>
 
 <?php
-	foreach (glob("assets/js/*.js") as $filename)	echo "<script src='$filename'></script>";
+	foreach (glob("assets/js/*.js") as $filename)	echo "<script src='$filename'></script>\n";
 ?>
 			<script type="text/javascript">
 				$(document).ready(function(){

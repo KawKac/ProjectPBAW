@@ -1,4 +1,6 @@
 <section class="content_page">
+  <h2 class="h2_center">SPRAWDŹ ZAMÓWIENIE</h2>
+  <hr class="hr_dashed">
   <form class="" action="delivery.php" method="post">
     <div class="row gtr-uniform">
       <div class="col-12">

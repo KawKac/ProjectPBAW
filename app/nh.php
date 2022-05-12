@@ -7,6 +7,8 @@ $("#back").click(function()
 </script>
 
 <section class="content_page">
+  <h2 class="h2_center">PRZYPOMNINAMY HASEŁKO</h2>
+  <hr class="hr_dashed">
   <div class="white_font">
     Zapomniałeś hasła? Nic się nie stało! Uzupełnij polę, a na e-mail przyjdzie ci instrukcja.
   </div>
