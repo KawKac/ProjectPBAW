@@ -3878,6 +3878,7 @@ input, select, textarea {
 		background-position: top right;
 		background-repeat: no-repeat;
 		background-size: 100% 100%;
+		color: white;
 	}
 
 		#intro p {
@@ -3911,4 +3912,9 @@ input, select, textarea {
 .content_page
 {
 	margin:20px;
+}
+
+.div_content_page
+{
+	color: white; 
 }

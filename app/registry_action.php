@@ -17,7 +17,7 @@
 			echo json_encode(array("statusCode"=>201));
 		}
 		else{
-			$sql = "INSERT INTO `crud`( `name`, `email`, `phone`, `city`, `password`)
+			$sql = "INSERT INTO `users`( `imie`, `nazwisko`, `login`, `haslo`, `password`)
 			VALUES ('$name','$email','$phone','$city', '$password')";
 			if (mysqli_query($conn, $sql)) {
 				echo json_encode(array("statusCode"=>200));

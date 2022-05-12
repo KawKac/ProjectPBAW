@@ -1,6 +1,3 @@
-<script src="assets/js/login.js">
-
-</script>
 <section class="content_page">
   <form class="" action="./app/login_action.php" method="post" id="">
     <div class="row gtr-uniform">
