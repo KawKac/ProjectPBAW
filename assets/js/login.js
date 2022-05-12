@@ -44,7 +44,7 @@ $(document).ready(function() {
 		var password = $('#password_log').val();
 		if(password!="" ){
 			$.ajax({
-				url: "save.php",
+				url: "login_action.php",
 				type: "POST",
 				data: {
 					type:2,

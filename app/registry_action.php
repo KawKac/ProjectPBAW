@@ -3,10 +3,13 @@
 	session_start();
 	if($_POST['type']==1){
 		$name=$_POST['name'];
+    $vorname=$_POST['vorname'];
+    $login=$_POST['login'];
+    $password=$_POST['password'];
+    $ppassword=$_POST['ppassword'];
 		$email=$_POST['email'];
-		$phone=$_POST['phone'];
-		$city=$_POST['city'];
-		$password=$_POST['password'];
+		$pemil=$_POST['pemail'];
+
 
 		$duplicate=mysqli_query($conn,"select * from crud where email='$email'");
 		if (mysqli_num_rows($duplicate)>0)
@@ -18,6 +21,8 @@
 			VALUES ('$name','$email','$phone','$city', '$password')";
 			if (mysqli_query($conn, $sql)) {
 				echo json_encode(array("statusCode"=>200));
+        $message=file_get_contents("message.php",TRUE);
+        mail($email,"Rejestracja",)
 			}
 			else {
 				echo json_encode(array("statusCode"=>201));
