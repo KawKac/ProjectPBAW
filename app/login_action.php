@@ -1,25 +1,26 @@
 <?php
 	include 'database.php';
 	session_start();
-	if($_POST['type']==1){
+	if(isset($_POST['login'])&&isset($_POST['pass'])){
 		$login=$_POST['login'];
-    $pass=$_POST['pass'];
-    $pass=$.md5($pass);
+    $pass=$md5($_POST['pass']);
 
-    if(mysqli_query($conn),"SELECT CASE WHEN EXISTS (select * from users where login='$login') THEN 'TRUE' ELSE 'FALSE' END")
-		  $duplicate=mysqli_query($conn,"select haslo from users where login='$login'");
+    if(mysql_query($conn)&&mysql_query(`SELECT CASE WHEN EXISTS (select * from users where login='$login') THEN 'TRUE' ELSE 'FALSE' END;`))
+		  $duplicate=mysql_query($conn,"select haslo from users where login='$login';");
 
     elseif ($duplicate.equals($pass))
-      $_SESSION.session_start();
+      session_start();
 
 		else
     {
-      ?>
-        $(`
-          <div class="alert alert-danger" role="alert">
-            Zły login lub hasło
-          </div>
-        `).appendTo(body);
+			?>
+			<script type="text/javascript">
+			$(`
+				<div class="alert alert-danger" role="alert">
+					Zły login lub hasło
+				</div>
+			`).appendTo(body);
+			</script>
       <?php
 		}
 		mysqli_close($conn);

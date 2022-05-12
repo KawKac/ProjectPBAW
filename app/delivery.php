@@ -1,7 +1,7 @@
 <section class="content_page">
   <h2 class="h2_center">SPRAWDŹ ZAMÓWIENIE</h2>
   <hr class="hr_dashed">
-  <form class="" action="delivery.php" method="post">
+  <form class="" action="delivery.php" method="get">
     <div class="row gtr-uniform">
       <div class="col-12">
         <input type="text" name="delivery" placeholder="KOD ZAMÓWIENIA">
