@@ -10,20 +10,14 @@ $(document).ready(function() {
 	$('#butsave').on('click', function() {
 		$("#butsave").attr("disabled", "disabled");
 		var name = $('#name').val();
-		var email = $('#email').val();
-		var phone = $('#phone').val();
-		var city = $('#city').val();
 		var password = $('#password').val();
-		if(name!="" && email!="" && phone!="" && password!="" ){
+		if(name!="" && password!="" ){
 			$.ajax({
-				url: "save.php",
+				url: "app/login_action.php",
 				type: "POST",
 				data: {
 					type: 1,
 					name: name,
-					email: email,
-					phone: phone,
-					city: city,
 					password: password
 				},
 				cache: false,
@@ -37,7 +31,6 @@ $(document).ready(function() {
 					}
 					else if(dataResult.statusCode==201){
 						$("#error").show();
-						$('#error').html('Email ID already exists !');
 					}
 
 				}
@@ -48,15 +41,13 @@ $(document).ready(function() {
 		}
 	});
 	$('#butlogin').on('click', function() {
-		var email = $('#email_log').val();
 		var password = $('#password_log').val();
-		if(email!="" && password!="" ){
+		if(password!="" ){
 			$.ajax({
 				url: "save.php",
 				type: "POST",
 				data: {
 					type:2,
-					email: email,
 					password: password
 				},
 				cache: false,
@@ -67,7 +58,7 @@ $(document).ready(function() {
 					}
 					else if(dataResult.statusCode==201){
 						$("#error").show();
-						$('#error').html('Invalid EmailId or Password !');
+						$('#error').html('Invalid Login or Password !');
 					}
 
 				}
