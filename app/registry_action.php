@@ -10,7 +10,6 @@
 		$email=$_POST['email'];
 		$pemil=$_POST['pemail'];
 
-
 		$duplicate=mysqli_query($conn,"select * from crud where email='$email'");
 		if (mysqli_num_rows($duplicate)>0)
 		{

@@ -1,3 +1,10 @@
+<script type="text/javascript">
+$("#nh").click(function()
+{
+  $("#intro").html("");
+  $("#intro").load("app/nh.php")
+});
+</script>
 <section class="content_page">
   <form class="" action="./app/login_action.php" method="post" id="">
     <div class="row gtr-uniform">
@@ -12,7 +19,7 @@
       </div>
     </div>
     <br>
-      <a href="#">Nie pamiętam hasła.</a><br>
+      <a href="#" class="white_font" id="nh">Nie pamiętam hasła.</a><br>
     <br>
       <input type="submit" name="submit" value="Zaloguj" class="button">
   </form>

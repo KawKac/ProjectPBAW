@@ -3914,7 +3914,12 @@ input, select, textarea {
 	margin:20px;
 }
 
-.div_content_page
+.white_font
 {
-	color: white; 
+	color: white;
+}
+
+a.white_font:hover
+{
+	color: #D9B89C;
 }
