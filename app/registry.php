@@ -1,3 +1,4 @@
+<script src="assets/js/registry.js"></script>
 <section class="content_page">
   <form class="" action="registry.php" method="post">
     <div class="row gtr-uniform">
