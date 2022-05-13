@@ -21,8 +21,8 @@
 			VALUES ('$name','$email','$phone','$city', '$password')";
 			if (mysqli_query($conn, $sql)) {
 				echo json_encode(array("statusCode"=>200));
-        $message=file_get_contents("message.php",TRUE);
-        send_mail($email, $subject, $body, $headers)
+        $body=file_get_contents("message.php",TRUE);
+        send_mail($email, $subject, $body);
 			}
 			else {
 				echo json_encode(array("statusCode"=>201));
