@@ -1,5 +1,5 @@
 <?php
-	include 'database.php';
+	include('database.php');
 	function login($login, $pass)
 	{
     if(mysql_query($conn)&&mysql_query(`SELECT CASE WHEN EXISTS (select * from users where login='$login') THEN 'TRUE' ELSE 'FALSE' END;`))
@@ -20,6 +20,7 @@
 							Pomyślnie zalogowano!
 						</div>
 					`).appendTo(body);');
+
 					session_start();
 				}
 				else {  }

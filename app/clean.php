@@ -45,7 +45,7 @@ foreach (glob("assets/css/*.css") as $filename) echo "<link rel='stylesheet' hre
 ?>
 			<script type="text/javascript">
 				$(document).ready(function(){
-					$("#intro").load("app/home.php")
+					$("#intro").load("app/pages/home.php")
 				});
 			</script>
 	</body>

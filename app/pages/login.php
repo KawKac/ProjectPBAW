@@ -2,7 +2,7 @@
 $("#nh").click(function()
 {
   $("#intro").html("");
-  $("#intro").load("app/nh.php")
+  $("#intro").load("app/pages/nh.php")
 });
 </script>
 <section class="content_page">
@@ -27,7 +27,7 @@ $("#nh").click(function()
   </form>
 </section>
 <?php
-include 'login_action.php';
+include('login_action.php');
 if(isset($_POST['login'])&&isset($_POST['pass']))
   login($_POST['login'],$_['pass']);
   else {

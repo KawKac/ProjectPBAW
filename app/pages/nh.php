@@ -2,7 +2,7 @@
 $("#back").click(function()
 {
   $("#intro").html("");
-  $("#intro").load("app/login.php")
+  $("#intro").load("app/pages/login.php")
 });
 </script>
 
@@ -25,3 +25,16 @@ $("#back").click(function()
     <a href="#" class="button" id="back">POWRÓT</a>
   </form>
 </section>
+<?php
+include ("nh_action.php");
+if(isset($_POST['mail']))
+  nh_action($_POST['mail']);
+else
+  {
+    echo (`
+    <script type="text/javascript">
+      alert("Podaj poprawny mail");
+    </script>
+    `)
+  }
+?>

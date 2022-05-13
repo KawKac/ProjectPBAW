@@ -1,5 +1,6 @@
 <?php
-	include 'database.php';
+	include ('database.php');
+	include ('send_mail.php');
 	session_start();
 	if($_POST['type']==1){
 		$name=$_POST['name'];
@@ -21,7 +22,7 @@
 			if (mysqli_query($conn, $sql)) {
 				echo json_encode(array("statusCode"=>200));
         $message=file_get_contents("message.php",TRUE);
-        mail($email,"Rejestracja",)
+        send_mail($email, $subject, $body, $headers)
 			}
 			else {
 				echo json_encode(array("statusCode"=>201));
