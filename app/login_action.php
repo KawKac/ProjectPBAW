@@ -1,16 +1,28 @@
 <?php
 	include 'database.php';
-	session_start();
-	if(isset($_POST['login'])&&isset($_POST['pass'])){
-		$login=$_POST['login'];
-    $pass=$md5($_POST['pass']);
-
+	function login($login, $pass)
+	{
     if(mysql_query($conn)&&mysql_query(`SELECT CASE WHEN EXISTS (select * from users where login='$login') THEN 'TRUE' ELSE 'FALSE' END;`))
-		  $duplicate=mysql_query($conn,"select haslo from users where login='$login';");
-
-    elseif ($duplicate.equals($pass))
-      session_start();
-
+			{
+				$duplicate=mysql_query($conn,"select haslo from users where login='$login';");
+				echo ('<script type="text/javascript">
+				$(`
+					<div class="alert alert-danger" role="alert">
+						Błąd podczas logowania
+					</div>
+				`).appendTo(body);');
+			}
+				if ($duplicate.equals($pass))
+				{
+					echo ('<script type="text/javascript">
+					$(`
+						<div class="alert alert-success" role="alert">
+							Pomyślnie zalogowano!
+						</div>
+					`).appendTo(body);');
+					session_start();
+				}
+				else {  }
 		else
     {
 			?>
