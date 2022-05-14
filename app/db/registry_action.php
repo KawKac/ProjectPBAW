@@ -1,47 +1,45 @@
 <?php
 	include ('database.php');
 	include ('send_mail.php');
-	session_start();
-	if($_POST['type']==1){
-		$name=$_POST['name'];
-    $vorname=$_POST['vorname'];
-    $login=$_POST['login'];
-    $password=$_POST['password'];
-    $ppassword=$_POST['ppassword'];
-		$email=$_POST['email'];
-		$pemil=$_POST['pemail'];
+	function registry_action_validation($name,$vorname,$login,$password,$ppassword,$email,$pemail)
+	{
+		$duplicate_email=mysqli_query($conn,"select * from users where email='$email'");
+		$duplicate_login=mysqli_query($conn,"select * from users where login='$login'");
+		if(isset($name))
+			if(isset($vorname))
+				if(isset($login))
+					if(isset($password))
+						if(isset($ppassword))
+							if(isset($email))
+								if(isset($pemail))
+									if($password==$ppasword)
+										if($email==$pemail)
+											if(!(mysqli_num_rows($duplicate_email)>0))
+												if(!(mysqli_num_rows($duplicate_login)>0))
+													registry_action($name,$vorname,$login,$password,$email);
+												else echo `<script>alert("Użytkownik o podanym loginie już istnieje");</script>`;
+											else echo `<script>alert("Użytkownik o podanym emailu już istnieje");</script>`;
+										else echo `<script>alert("Podałeś różne maile");</script>`;
+									else echo `<script>alert("Podałeś różne hasła");</script>`;
+								else echo `<script>alert("Proszę o powtórzenie Twojego e-maila");</script>`;
+							else echo `<script>alert("Proszę o podanie Twojego e-maila");</script>`;
+						else echo `<script>alert("Proszę o powtórzenie Twojego hasła");</script>`;
+					else echo `<script>alert("Proszę o podanie Twojego hasła");</script>`;
+				else echo `<script>alert("Proszę o podanie Twojego loginu");</script>`;
+			else echo `<script>alert("Proszę o podanie Twojego nazwiska");</script>`;
+		else echo `<script>alert("Proszę o podanie Twojego imienia");</script>`;
+	}
 
-		$duplicate=mysqli_query($conn,"select * from crud where email='$email'");
-		if (mysqli_num_rows($duplicate)>0)
-		{
-			echo json_encode(array("statusCode"=>201));
-		}
-		else{
-			$sql = "INSERT INTO `users`( `imie`, `nazwisko`, `login`, `haslo`, `password`)
-			VALUES ('$name','$email','$phone','$city', '$password')";
-			if (mysqli_query($conn, $sql)) {
-				echo json_encode(array("statusCode"=>200));
-        $body=file_get_contents("message.php",TRUE);
-        send_mail($email, $subject, $body);
-			}
-			else {
-				echo json_encode(array("statusCode"=>201));
-			}
-		}
-		mysqli_close($conn);
+	function registry_action($name,$vorname,$login,$password,$email)
+	{
+		$sql = "INSERT INTO `users`(`IMIE`, `NAZWISKO`, `LOGIN`, `HASLO`, `E_MAIL`) VALUES (`$name`,`$vorname`,`$login`,`$password`,`$email`)";
+		mysqli_query($conn,$sql);
+		$sql = "INSERT INTO `users_chmode`(`ID_USERS`, `ID_CHMODE`) VALUES (`$login`,1)";
+		mysqli_query($conn,$sql);
+		$body=file_get_contents("../script/message_registry.php",TRUE);
+		$subject="Dziękujemy za rejestrację";
+		send_mail($email, $subject, $body);
+		echo `<script>alert("Dziękujemy za rejestrację, teraz możesz zalogować się na swoje konto");</script>`;
 	}
-	if($_POST['type']==2){
-		$email=$_POST['email'];
-		$password=$_POST['password'];
-		$check=mysqli_query($conn,"select * from crud where email='$email' and password='$password'");
-		if (mysqli_num_rows($check)>0)
-		{
-			$_SESSION['email']=$email;
-			echo json_encode(array("statusCode"=>200));
-		}
-		else{
-			echo json_encode(array("statusCode"=>201));
-		}
-		mysqli_close($conn);
-	}
+	mysqli_close();
 ?>

@@ -22,7 +22,7 @@
         echo "<td>$row['LOGIN']</td>";
         echo "<td>$row['E_MAIL']</td>";
         echo "<td>$row['TELEFON']</td>";
-        echo "<td><input type='checkbox' name='' value=''></td>";
+        echo "<td><input type='checkbox' name='' value='' checked></td>";
 
         echo "</tr>";
       }
