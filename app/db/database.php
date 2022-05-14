@@ -3,5 +3,5 @@
 	$username = "projectpbaw";
 	$password = "Dfhu]zSR)sS!pn*4";
 	$db="projekt";
-	$conn = mysqli_connect($servername, $username, $password,$db);
+	$conn = mysqli_connect($servername, $username, $password, $db);
 ?>

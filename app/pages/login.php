@@ -28,17 +28,7 @@ $("#nh").click(function()
 </section>
 <?php
 include('../db/login_action.php');
-if(isset($_POST['login'])&&isset($_POST['pass']))
-  login($_POST['login'],$_['pass']);
-  else {
-    ?>
-    <script type="text/javascript">
-    $(`
-      <div class="alert alert-danger" role="alert">
-        Nie podano loginu lub hasła.
-      </div>
-    `).appendTo(body);
-    </script>
-    <?php
-  }
+if(isset($_POST['login'])||isset($_POST['pass']))
+  login($_POST['login'],md5($_POST['pass']));
+else echo `<script>alert("Nie podano loginu lub hasła");</script>`;
 ?>

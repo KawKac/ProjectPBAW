@@ -1,10 +1,11 @@
 <?php
 	include ('database.php');
-	include ('send_mail.php');
+	include ('../script/send_mail.php');
+
 	function registry_action_validation($name,$vorname,$login,$password,$ppassword,$email,$pemail)
 	{
-		$duplicate_email=mysqli_query($conn,"select * from users where email='$email'");
-		$duplicate_login=mysqli_query($conn,"select * from users where login='$login'");
+		$duplicate_email=mysqli_query($conn,"SELECT * FROM users WHERE email='$email'");
+		$duplicate_login=mysqli_query($conn,"SELECT * FROM users WHERE login='$login'");
 		if(isset($name))
 			if(isset($vorname))
 				if(isset($login))
@@ -41,5 +42,5 @@
 		send_mail($email, $subject, $body);
 		echo `<script>alert("Dziękujemy za rejestrację, teraz możesz zalogować się na swoje konto");</script>`;
 	}
-	mysqli_close();
+	mysqli_close($conn);
 ?>
