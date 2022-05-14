@@ -12,7 +12,7 @@
 					</div>
 				`).appendTo(body);');
 			}
-				if ($duplicate.equals($pass))
+				elseif ($duplicate.equals($pass))
 				{
 					echo ('<script type="text/javascript">
 					$(`
@@ -23,7 +23,6 @@
 
 					session_start();
 				}
-				else {  }
 		else
     {
 			?>

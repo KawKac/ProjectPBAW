@@ -8,3 +8,4 @@
     </ul>
   </nav>
 </div>
+<script src="./assets/js/navbarcontrol/navbarcontrol.js"></script>

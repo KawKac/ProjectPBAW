@@ -1,4 +1,3 @@
-<script src="assets/js/registry.js"></script>
 <section class="content_page">
   <h2 class="h2_center">REJESTRACJA</h2>
   <hr class="hr_dashed">

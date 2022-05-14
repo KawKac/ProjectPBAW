@@ -26,7 +26,7 @@ $("#back").click(function()
   </form>
 </section>
 <?php
-include ("nh_action.php");
+include ("../db/nh_action.php");
 if(isset($_POST['mail']))
   nh_action($_POST['mail']);
 else
@@ -35,6 +35,6 @@ else
     <script type="text/javascript">
       alert("Podaj poprawny mail");
     </script>
-    `)
+    `);
   }
 ?>

@@ -7,13 +7,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 <?php
 foreach (glob("assets/css/*.css") as $filename) echo "<link rel='stylesheet' href='$filename'>\n";
+foreach (glob("assets/js/*.js") as $filename)	if(!($filename=="assets/js/main.js")) echo "<script src='$filename'></script>\n";
 ?>
 	</head>
 	<body class="is-preload">
 
 			<section id="sidebar">
 				<?php
-					include('check.php');
+					include('menu/check.php');
 					check();
 				?>
 			</section>
@@ -33,10 +34,7 @@ foreach (glob("assets/css/*.css") as $filename) echo "<link rel='stylesheet' hre
 					</ul>
 				</div>
 			</footer>
-
-<?php
-	foreach (glob("assets/js/*.js") as $filename)	echo "<script src='$filename'></script>\n";
-?>
+			<script src="assets/js/main.js"></script>
 			<script type="text/javascript">
 				$(document).ready(function(){
 					$("#intro").load("app/pages/home.php")

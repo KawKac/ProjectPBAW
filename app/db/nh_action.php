@@ -1,6 +1,6 @@
 <?php
-include("send_mail.php");
-public function nh_action($to_email)
+include("../script/send_mail.php");
+function nh_action($to_email)
 {
   $subject="Przypomnienie hasła";
   $body=file_get_contents("message_nh.php",TRUE);
