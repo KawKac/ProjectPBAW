@@ -40,7 +40,12 @@
 		$body=file_get_contents("../script/message_registry.php",TRUE);
 		$subject="Dziękujemy za rejestrację";
 		send_mail($email, $subject, $body);
-		echo `<script>alert("Dziękujemy za rejestrację, teraz możesz zalogować się na swoje konto");</script>`;
+		echo (`
+			<script type="text/javascript">
+				$("#intro").html("");
+				$("#intro").load("../pages/registry_successfull.php");
+			</script>
+		`);
 	}
 	mysqli_close($conn);
 ?>
