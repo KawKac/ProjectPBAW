@@ -12,6 +12,6 @@
   </form>
 </section>
 <?php
-include('delivery_action.php');
+  include('../db/delivery_action.php');
   delivery_action($_POST['delivery']);
 ?>
