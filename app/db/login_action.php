@@ -1,5 +1,6 @@
 <?php
 	include('database.php');
+	include('../menu/check.php');
 	function login($login, $pass)
 	{
     if(mysql_query($conn)&&mysql_query(`SELECT CASE WHEN EXISTS (select * from users where login='$login') THEN 'TRUE' ELSE 'FALSE' END;`))
@@ -20,7 +21,8 @@
 							Pomyślnie zalogowano!
 						</div>
 					`).appendTo(body);');
-
+					$default=mysqli_query($conn,"SELECT `ID_CHMODE` FROM `users_chmode` WHERE `ID_USERS`=$login");
+					check($default);
 					session_start();
 				}
 		else

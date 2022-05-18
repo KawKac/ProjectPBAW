@@ -6,4 +6,7 @@
     <a href="#" class="button" id="pack">Pack</a>
     <a href="#" class="button" id="cret">C-Ret</a>
   </div>
+  <div id="work_contents">
+    <!-- tu wczytają się narzędzia do pracy w zależności który przycisk się wybierze -->
+  </div>
 </section>
