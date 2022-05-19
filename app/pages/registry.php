@@ -1,7 +1,7 @@
 <section class="content_page">
   <h2 class="h2_center">REJESTRACJA</h2>
   <hr class="hr_dashed">
-  <form class="" action="" method="post">
+  <form class="" action="./app/db/registry_action.php" method="post">
     <div class="row gtr-uniform">
       <div class="col-6 col-12-xsmall">
         <input type="text" name="name" placeholder="IMIĘ">
@@ -39,12 +39,3 @@
       <input type="submit" name="submit" value="Zarejestruj" class="button">
   </form>
 </section>
-<?php
-  include("../db/registry_action.php");
-  if(isset($_POST['demo_human']))
-    registry_action_validation($_POST['name'],$_POST['vorname'], $_POST['login'], md5($_POST['password']),md5($_POST['ppassword']),$_POST['email'],$_POST['pemail']);
-  else
-  {
-    echo `<script>alert("Potwierdź że nie jesteś robotem");$("#intro").load("app/pages/registry.php");</script>`;
-  }
-?>
