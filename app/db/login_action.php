@@ -3,15 +3,14 @@
 	include('../menu/check.php');
 	function login($login, $pass)
 	{
-    if(mysql_query($conn)&&mysql_query(`SELECT CASE WHEN EXISTS (select * from users where login='$login') THEN 'TRUE' ELSE 'FALSE' END;`))
+		$opposit_of_login=mysqli_query($conn,"SELECT `HASLO` FROM `users` WHERE `LOGIN=$login`");
+    if($opposite_of_login == $pass)
 			{
-				$duplicate=mysql_query($conn,"select haslo from users where login='$login';");
-				echo ('<script type="text/javascript">
-				$(`
-					<div class="alert alert-danger" role="alert">
-						Błąd podczas logowania
-					</div>
-				`).appendTo(body);');
+				echo ('<div class="alert alert-danger" role="alert">
+						Zły login lub hasło
+					</div>');
+					echo `<script>$("#intro").html("");
+				  $("#intro").load("app/pages/home.php");</script>`;
 			}
 				elseif ($duplicate.equals($pass))
 				{
@@ -24,6 +23,7 @@
 					$default=mysqli_query($conn,"SELECT `ID_CHMODE` FROM `users_chmode` WHERE `ID_USERS`=$login");
 					check($default);
 					session_start();
+					$_SESSION['newsession']=$login;
 				}
 		else
     {

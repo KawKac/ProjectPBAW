@@ -18,17 +18,17 @@
 											if(!(mysqli_num_rows($duplicate_email)>0))
 												if(!(mysqli_num_rows($duplicate_login)>0))
 													registry_action($name,$vorname,$login,$password,$email);
-												else echo `<script>alert("Użytkownik o podanym loginie już istnieje");</script>`;
-											else echo `<script>alert("Użytkownik o podanym emailu już istnieje");</script>`;
-										else echo `<script>alert("Podałeś różne maile");</script>`;
-									else echo `<script>alert("Podałeś różne hasła");</script>`;
-								else echo `<script>alert("Proszę o powtórzenie Twojego e-maila");</script>`;
-							else echo `<script>alert("Proszę o podanie Twojego e-maila");</script>`;
-						else echo `<script>alert("Proszę o powtórzenie Twojego hasła");</script>`;
-					else echo `<script>alert("Proszę o podanie Twojego hasła");</script>`;
-				else echo `<script>alert("Proszę o podanie Twojego loginu");</script>`;
-			else echo `<script>alert("Proszę o podanie Twojego nazwiska");</script>`;
-		else echo `<script>alert("Proszę o podanie Twojego imienia");</script>`;
+												else echo `<script>alert("Użytkownik o podanym loginie już istnieje");$("#intro").load("app/pages/registry.php");</script>`;
+											else echo `<script>alert("Użytkownik o podanym emailu już istnieje");$("#intro").load("app/pages/registry.php");</script>`;
+										else echo `<script>alert("Podałeś różne maile");$("#intro").load("app/pages/registry.php");</script>`;
+									else echo `<script>alert("Podałeś różne hasła");$("#intro").load("app/pages/registry.php");</script>`;
+								else echo `<script>alert("Proszę o powtórzenie Twojego e-maila");<$("#intro").load("app/pages/registry.php");/script>`;
+							else echo `<script>alert("Proszę o podanie Twojego e-maila");$("#intro").load("app/pages/registry.php");</script>`;
+						else echo `<script>alert("Proszę o powtórzenie Twojego hasła");$("#intro").load("app/pages/registry.php");</script>`;
+					else echo `<script>alert("Proszę o podanie Twojego hasła");$("#intro").load("app/pages/registry.php");</script>`;
+				else echo `<script>alert("Proszę o podanie Twojego loginu");$("#intro").load("app/pages/registry.php");</script>`;
+			else echo `<script>alert("Proszę o podanie Twojego nazwiska");$("#intro").load("app/pages/registry.php");</script>`;
+		else echo `<script>alert("Proszę o podanie Twojego imienia");$("#intro").load("app/pages/registry.php");</script>`;
 	}
 
 	function registry_action($name,$vorname,$login,$password,$email)

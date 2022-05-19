@@ -31,7 +31,7 @@
     <br>
     <div class="row gtr-uniform">
       <div class="col-6 col-12-xsmall">
-        <input type="checkbox" name="demo_human" value="YES">
+        <input type="checkbox" name="demo_human" value="YES" id="demo_human">
         <label for="demo_human">Nie jestem robotem.</label>
       </div>
     </div>
@@ -43,5 +43,8 @@
   include("../db/registry_action.php");
   if(isset($_POST['demo_human']))
     registry_action_validation($_POST['name'],$_POST['vorname'], $_POST['login'], md5($_POST['password']),md5($_POST['ppassword']),$_POST['email'],$_POST['pemail']);
-  else echo `<script>alert("Potwierdź że nie jesteś robotem");</script>`;
+  else
+  {
+    echo `<script>alert("Potwierdź że nie jesteś robotem");$("#intro").load("app/pages/registry.php");</script>`;
+  }
 ?>
