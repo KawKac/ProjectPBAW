@@ -2,7 +2,7 @@
 $("#back").click(function()
 {
   $("#intro").html("");
-  $("#intro").load("app/pages/login.php")
+  $("#intro").load("login.php")
 });
 </script>
 
@@ -26,7 +26,7 @@ $("#back").click(function()
   </form>
 </section>
 <?php
-include ("../db/nh_action.php");
+include ("./nh_action.php");
 if(isset($_POST['mail']))
   nh_action($_POST['mail']);
 else

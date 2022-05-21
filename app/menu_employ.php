@@ -9,3 +9,4 @@
     </ul>
   </nav>
 </div>
+<script src="./assets/js/navbarcontrol/navbarcontrol_employ.js"></script>

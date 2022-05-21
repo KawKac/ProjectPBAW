@@ -1,5 +1,5 @@
 <?php
-include("../script/send_mail.php");
+include("./send_mail.php");
 function nh_action($to_email)
 {
   $subject="Przypomnienie hasła";

@@ -14,8 +14,11 @@ foreach (glob("assets/js/*.js") as $filename)	if(!($filename=="assets/js/main.js
 
 			<section id="sidebar">
 				<?php
-					include('menu/check.php');
-					check();
+					include('check.php');
+					if(isset($_SESSION['newsession']))
+						check($_SESSION['newsession']);
+					else
+						check();
 				?>
 			</section>
 
@@ -37,7 +40,7 @@ foreach (glob("assets/js/*.js") as $filename)	if(!($filename=="assets/js/main.js
 			<script src="assets/js/main.js"></script>
 			<script type="text/javascript">
 				$(document).ready(function(){
-					$("#intro").load("app/pages/home.php")
+					$("#intro").load("app/home.php")
 				});
 			</script>
 	</body>

@@ -3,19 +3,19 @@
   {
     switch ($default) {
       case '0':
-        include('menu.php');
+        include('app/menu.php');
         break;
       case '1':
-        include('menu_user.php');
+        include('app/menu_user.php');
         break;
       case '2':
-        include('menu_employ.php');
+        include('app/menu_employ.php');
         break;
       case '3':
-        include('menu_admin.php');
+        include('app/menu_admin.php');
         break;
       default:
-        include('menu.php');
+        include('app/menu.php');
         break;
     }
   }

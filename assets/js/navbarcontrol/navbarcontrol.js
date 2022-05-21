@@ -1,23 +1,23 @@
 $("#0").click(function()
 {
   $("#intro").html("");
-  $("#intro").load("app/pages/home.php");
+  $("#intro").load("app/home.php");
 });
 
 $("#1").click(function()
 {
   $("#intro").html("");
-  $("#intro").load("app/pages/login.php");
+  $("#intro").load("app/login.php");
 });
 
 $("#2").click(function()
 {
   $("#intro").html("");
-  $("#intro").load("app/pages/registry.php");
+  $("#intro").load("app/registry.php");
 });
 
 $("#3").click(function()
 {
   $("#intro").html("");
-  $("#intro").load("app/pages/delivery.php");
+  $("#intro").load("app/delivery.php");
 });

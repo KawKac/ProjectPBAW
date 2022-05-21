@@ -1,6 +1,6 @@
 <?php
 	include('database.php');
-	include('../menu/check.php');
+	include('./check.php');
 	function login($login, $pass)
 	{
 		$opposit_of_login=mysqli_query($conn,"SELECT `HASLO` FROM `users` WHERE `LOGIN=$login`");
@@ -21,12 +21,13 @@
 						</div>
 					`).appendTo(body);');
 					$default=mysqli_query($conn,"SELECT `ID_CHMODE` FROM `users_chmode` WHERE `ID_USERS`=$login");
-					check($default);
 					session_start();
-					$_SESSION['newsession']=$login;
+					$_SESSION['newsession']=$default;
+					header("Location:../index.php");
 				}
 		else
     {
+			header("Location:../index.php");
 			?>
 			<script type="text/javascript">
 			$(`

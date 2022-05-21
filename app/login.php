@@ -2,7 +2,7 @@
 $("#nh").click(function()
 {
   $("#intro").html("");
-  $("#intro").load("app/pages/nh.php")
+  $("#intro").load("nh.php")
 });
 </script>
 <section class="content_page">
@@ -27,7 +27,7 @@ $("#nh").click(function()
   </form>
 </section>
 <?php
-include('../db/login_action.php');
+include('login_action.php');
 $pass=isset($_POST['pass']);
 $login=isset($_POST['login']);
 if(isset($login)&&isset($pass)&&md5($pass)!="d41d8cd98f00b204e9800998ecf8427e")

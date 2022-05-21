@@ -1,17 +1,17 @@
 $("#0").click(function()
 {
   $("#intro").html("");
-  $("#intro").load("app/pages/home.php");
+  $("#intro").load("app/home.php");
 });
 
 $("#1").click(function()
 {
   $("#intro").html("");
-  $("#intro").load("app/pages/delivery.php");
+  $("#intro").load("app/delivery.php");
 });
 
 $("#2").click(function()
 {
   $("#intro").html("");
-  $("#intro").load("app/pages/options.php");
+  $("#intro").load("app/options.php");
 });

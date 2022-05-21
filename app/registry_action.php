@@ -1,7 +1,6 @@
 <?php
 	require ('./database.php');
-	require ('../script/send_mail.php');
-	echo "<script src='../../assets/js/jquery-3.5.0.js'></script>";
+	require ('./send_mail.php');
 
 	$name = $_POST['name'];
 	$login = $_POST['login'];
@@ -40,17 +39,13 @@
 
 	function registry_action($name,$vorname,$login,$password,$email,$conn)
 	{
-		$sql = "INSERT INTO `users_chmode`(`ID_USERS`, `ID_CHMODE`) VALUES ('$login', 1)";
+		$sql = "SET GLOBAL FOREIGN_KEY_CHECKS=0";
 		mysqli_query($conn,$sql);
 		$sql = "INSERT INTO `users`(`IMIE`, `NAZWISKO`, `LOGIN`, `HASLO`, `E_MAIL`) VALUES ('$name','$vorname','$login','$password','$email')";
 		mysqli_query($conn,$sql);
-		echo (`
-			<script type="text/javascript">
-				$(docunment).load("../../clean.php")
-				$("#intro").html("");
-				$("#intro").load("../pages/registry_successfull.php");
-			</script>
-		`);
+		$sql = "INSERT INTO `users_chmode`(`ID_USERS`, `ID_CHMODE`) VALUES ('$login', 1)";
+		mysqli_query($conn,$sql);
+		header("Location:../index.php");
 		$body=file_get_contents("../script/message_registry.html",TRUE);
 		$subject="Dziękujemy za rejestrację";
 		send_mail($email, $subject, $body);
