@@ -13,5 +13,7 @@
 </section>
 <?php
   include('./delivery_action.php');
-  delivery_action($_POST['delivery']);
+  include('./database.php');
+  if(isset($_POST['delivery']))
+    delivery_action($_POST['delivery'],$conn);
 ?>
