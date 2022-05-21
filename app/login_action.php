@@ -10,7 +10,7 @@
 						Zły login lub hasło
 					</div>');
 					echo `<script>$("#intro").html("");
-				  $("#intro").load("app/pages/home.php");</script>`;
+				  $("#intro").load("home.php");</script>`;
 			}
 				elseif ($duplicate.equals($pass))
 				{
