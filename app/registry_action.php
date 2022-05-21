@@ -24,26 +24,26 @@
 											if(intval($duplicate_email['total'])==0)
 												if(intval($duplicate_login['total'])==0)
 													registry_action($name,$vorname,$login,$password,$email,$conn);
-												else {$error = '<script>alert("Użytkownik o podanym loginie już istnieje");$("#intro").load("registry.php");</script>';}
-											else {$error = '<script>alert("Użytkownik o podanym emailu już istnieje");$("#intro").load("registry.php");</script>';}
-										else {$error = '<script>alert("Podałeś różne maile");$("#intro").load("registry.php");</script>';}
-									else {$error =  '<script>alert("Podałeś różne hasła");$("#intro").load("registry.php");</script>';}
-								else {$error =  '<script>alert("Proszę o powtórzenie Twojego e-maila");<$("#intro").load("registry.php");/script>';}
-							else {$error =  '<script>alert("Proszę o podanie Twojego e-maila");$("#intro").load("registry.php");</script>';}
-						else {$error =  '<script>alert("Proszę o powtórzenie Twojego hasła");$("#intro").load("registry.php");</script>';}
-					else {$error =  '<script>alert("Proszę o podanie Twojego hasła");$("#intro").load("registry.php");</script>';}
-				else {$error =  '<script>alert("Proszę o podanie Twojego loginu");$("#intro").load("registry.php");</script>';}
-			else {$error =  '<script>alert("Proszę o podanie Twojego nazwiska");$("#intro").load("registry.php");</script>';}
-		else {$error =  '<script>alert("Proszę o podanie Twojego imienia");$("#intro").load("registry.php");</script>';}
+												else {$error = '<script>alert("Użytkownik o podanym loginie już istnieje");header("Location:../index.php");$("#intro").load("registry.php");</script>';}
+											else {$error = '<script>alert("Użytkownik o podanym emailu już istnieje");header("Location:../index.php");$("#intro").load("registry.php");</script>';}
+										else {$error = '<script>alert("Podałeś różne maile");header("Location:../index.php");$("#intro").load("registry.php");</script>';}
+									else {$error =  '<script>alert("Podałeś różne hasła");header("Location:../index.php");$("#intro").load("registry.php");</script>';}
+								else {$error =  '<script>alert("Proszę o powtórzenie Twojego e-maila");header("Location:../index.php");<$("#intro").load("registry.php");/script>';}
+							else {$error =  '<script>alert("Proszę o podanie Twojego e-maila");header("Location:../index.php");$("#intro").load("registry.php");</script>';}
+						else {$error =  '<script>alert("Proszę o powtórzenie Twojego hasła");header("Location:../index.php");$("#intro").load("registry.php");</script>';}
+					else {$error =  '<script>alert("Proszę o podanie Twojego hasła");header("Location:../index.php");$("#intro").load("registry.php");</script>';}
+				else {$error =  '<script>alert("Proszę o podanie Twojego loginu");header("Location:../index.php");$("#intro").load("registry.php");</script>';}
+			else {$error =  '<script>alert("Proszę o podanie Twojego nazwiska");header("Location:../index.php");$("#intro").load("registry.php");</script>';}
+		else {$error =  '<script>alert("Proszę o podanie Twojego imienia");header("Location:../index.php");$("#intro").load("registry.php");</script>';}
 		echo $error;
 
 	function registry_action($name,$vorname,$login,$password,$email,$conn)
 	{
 		$sql = "SET GLOBAL FOREIGN_KEY_CHECKS=0";
 		mysqli_query($conn,$sql);
-		$sql = "INSERT INTO `users`(`IMIE`, `NAZWISKO`, `LOGIN`, `HASLO`, `E_MAIL`) VALUES ('$name','$vorname','$login','$password','$email')";
-		mysqli_query($conn,$sql);
 		$sql = "INSERT INTO `users_chmode`(`ID_USERS`, `ID_CHMODE`) VALUES ('$login', 1)";
+		mysqli_query($conn,$sql);
+		$sql = "INSERT INTO `users`(`IMIE`, `NAZWISKO`, `LOGIN`, `HASLO`, `E_MAIL`) VALUES ('$name','$vorname','$login','$password','$email')";
 		mysqli_query($conn,$sql);
 		header("Location:../index.php");
 		$body=file_get_contents("message_registry.html",TRUE);

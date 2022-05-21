@@ -1,7 +1,7 @@
 <section class="content_page">
   <h2 class="h2_center">REJESTRACJA</h2>
   <hr class="hr_dashed">
-  <form class="" action="./app/db/registry_action.php" method="post">
+  <form class="" action="./app/registry_action.php" method="post">
     <div class="row gtr-uniform">
       <div class="col-6 col-12-xsmall">
         <input type="text" name="name" placeholder="IMIĘ">
