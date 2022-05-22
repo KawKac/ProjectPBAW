@@ -15,7 +15,7 @@
     </tr>
     <?php
     $sql="SELECT `IMIE`, `NAZWISKO`, `LOGIN`, `E_MAIL`, `TELEFON` FROM `users`";
-      while ($row = mysql_fetch_assoc($)) {
+      while ($row = mysql_fetch_assoc($sql )) {
         echo "<tr>";
         echo "<td>$row['IMIE']</td>";
         echo "<td>$row['NAZWISKO']</td>";
