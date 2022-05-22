@@ -2,8 +2,8 @@
   function send_mail($to_email, $subject, $body, $headers='Od: eduedi2200@gmail.com')
   {
     if (mail($to_email, $subject, $body, $headers))
-      header("Location:../index.php");
+      header("Location:../");
     else
-      header("Location:../index.php");
+      header("Location:../");
   }
 ?>

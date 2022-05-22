@@ -23,11 +23,11 @@
 					$default=mysqli_query($conn,"SELECT `ID_CHMODE` FROM `users_chmode` WHERE `ID_USERS`=$login");
 					session_start();
 					$_SESSION['newsession']=$default;
-					header("Location:../index.php");
+					header("Location:../");
 				}
 		else
     {
-			header("Location:../index.php");
+			header("Location:../");
 			?>
 			<script type="text/javascript">
 			$(`
