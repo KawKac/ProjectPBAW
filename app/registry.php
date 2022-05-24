@@ -1,3 +1,4 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
 <script type="text/javascript">
 $('#haslo').focusin(function(){
   $('#haslo').parent().append('<div class="alert alert-primary" role="alert">Hasło powinno zawierać małą i dużą literę, cyfrę i znak specjalny</div>');

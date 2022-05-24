@@ -37,10 +37,21 @@ foreach (glob("assets/js/*.js") as $filename)	if(!($filename=="assets/js/main.js
 				</div>
 			</footer>
 			<script src="assets/js/main.js"></script>
-			<script type="text/javascript">
-				$(document).ready(function(){
-					$("#intro").load("app/home.php")
-				});
-			</script>
+			<?php
+			switch ($GLOBAL['info']) {
+				case 1:
+					include('login.php');
+					break;
+				case 2:
+					include('registry.php');
+					break;
+				case 3:
+					include('nh.php');
+					break;
+				default:
+					include('menu.php');
+					break;
+			}
+			?>
 	</body>
 </html>
