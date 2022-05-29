@@ -11,4 +11,5 @@
     </ul>
   </nav>
 </div>
+<a href="app/logout.php" class="button">WYLOGUJ</a>
 <script src="./assets/js/navbarcontrol/navbarcontrol_admin.js"></script>

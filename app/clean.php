@@ -18,7 +18,7 @@ foreach (glob("assets/js/*.js") as $filename)	if(!($filename=="assets/js/main.js
 					if(isset($_SESSION['chmode']))
 						check($_SESSION['chmode']);
 					else
-						check();
+						check(1);
 				?>
 			</section>
 
