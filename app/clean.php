@@ -24,9 +24,9 @@ foreach (glob("assets/js/*.js") as $filename)	if(!($filename=="assets/js/main.js
 			<div id="wrapper">
 					<section class="wrapper style1 fullscreen fade-up" id="intro">
 						<?php
-						if(!(isset($GLOBAL['info'])))$GLOBAL['info']=0;
-						echo $GLOBAL['info'];
-						switch ($GLOBAL['info']) {
+						if(!(isset($GLOBALS['info'])))$GLOBALS['info']=0;
+						echo $GLOBALS['info'];
+						switch ($GLOBALS['info']) {
 							case 0:
 								include('home.php');
 								break;
