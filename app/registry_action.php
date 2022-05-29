@@ -39,7 +39,7 @@
 
 	function registry_action($name,$vorname,$login,$password,$email,$conn)
 	{
-		$GLOBALS['info']=2;
+		$_SESSION['info']=2;
 		$sql = "SET GLOBAL FOREIGN_KEY_CHECKS=0";
 		mysqli_query($conn,$sql);
 		$sql = "INSERT INTO `users_chmode`(`ID_USERS`, `ID_CHMODE`) VALUES ('$login', 1)";

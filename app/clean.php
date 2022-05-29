@@ -5,6 +5,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 <?php
+session_start();
 foreach (glob("assets/css/*.css") as $filename) echo "<link rel='stylesheet' href='$filename'>\n";
 foreach (glob("assets/js/*.js") as $filename)	if(!($filename=="assets/js/main.js")) echo "<script src='$filename'></script>\n";
 ?>
@@ -14,8 +15,8 @@ foreach (glob("assets/js/*.js") as $filename)	if(!($filename=="assets/js/main.js
 			<section id="sidebar">
 				<?php
 					include('check.php');
-					if(isset($_SESSION['newsession']))
-						check($_SESSION['newsession']);
+					if(isset($_SESSION['chmode']))
+						check($_SESSION['chmode']);
 					else
 						check();
 				?>
@@ -24,25 +25,9 @@ foreach (glob("assets/js/*.js") as $filename)	if(!($filename=="assets/js/main.js
 			<div id="wrapper">
 					<section class="wrapper style1 fullscreen fade-up" id="intro">
 						<?php
-						if(!(isset($GLOBALS['info'])))$GLOBALS['info']=0;
-						echo $GLOBALS['info'];
-						switch ($GLOBALS['info']) {
-							case 0:
-								include('home.php');
-								break;
-							case 1:
-								include('login.php');
-								break;
-							case 2:
-								include('registry.php');
-								break;
-							case 3:
-								include('nh.php');
-								break;
-							default:
-								include('home.php');
-								break;
-						}
+						if(!(isset($_SESSION['info'])))$_SESSION['info']=2;
+						include('app/wrapper.php');
+						wrapper($_SESSION['info']);
 						?>
 					</section>
 			</div>
