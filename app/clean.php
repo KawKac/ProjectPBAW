@@ -23,7 +23,27 @@ foreach (glob("assets/js/*.js") as $filename)	if(!($filename=="assets/js/main.js
 
 			<div id="wrapper">
 					<section class="wrapper style1 fullscreen fade-up" id="intro">
-						<!-- Tutaj wszystkie inne pliki będą się wczytywać -->
+						<?php
+						if(!(isset($GLOBAL['info'])))$GLOBAL['info']=0;
+						echo $GLOBAL['info'];
+						switch ($GLOBAL['info']) {
+							case 0:
+								include('home.php');
+								break;
+							case 1:
+								include('login.php');
+								break;
+							case 2:
+								include('registry.php');
+								break;
+							case 3:
+								include('nh.php');
+								break;
+							default:
+								include('home.php');
+								break;
+						}
+						?>
 					</section>
 			</div>
 
@@ -37,21 +57,5 @@ foreach (glob("assets/js/*.js") as $filename)	if(!($filename=="assets/js/main.js
 				</div>
 			</footer>
 			<script src="assets/js/main.js"></script>
-			<?php
-			switch ($GLOBAL['info']) {
-				case 1:
-					include('login.php');
-					break;
-				case 2:
-					include('registry.php');
-					break;
-				case 3:
-					include('nh.php');
-					break;
-				default:
-					include('menu.php');
-					break;
-			}
-			?>
 	</body>
 </html>

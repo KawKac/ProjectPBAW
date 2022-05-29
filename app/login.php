@@ -1,10 +1,3 @@
-<script type="text/javascript">
-$("#nh").click(function()
-{
-  $("#intro").html("");
-  $("#intro").load("nh.php")
-});
-</script>
 <section class="content_page">
   <h2 class="h2_center">ZALOGUJ</h2>
   <hr class="hr_dashed">
@@ -26,3 +19,10 @@ $("#nh").click(function()
       <input type="submit" name="submit" value="Zaloguj" class="button">
   </form>
 </section>
+<script type="text/javascript">
+$("#nh").click(function()
+{
+  $("#intro").html("");
+  $("#intro").load("app/nh.php")
+});
+</script>

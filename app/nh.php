@@ -2,7 +2,7 @@
 $("#back").click(function()
 {
   $("#intro").html("");
-  $("#intro").load("login.php")
+  $("#intro").load("app/login.php")
 });
 </script>
 
@@ -13,7 +13,7 @@ $("#back").click(function()
     Zapomniałeś hasła? Nic się nie stało! Uzupełnij polę, a na e-mail przyjdzie ci instrukcja.
   </div>
   <br>
-  <form class="" action="nh_action.php" method="post">
+  <form class="" action="app/nh_action.php" method="post">
     <div class="col-6 col-12-xsmall">
       <input type="email" name="mail" value="" placeholder="E-MAIL">
     </div>
@@ -25,16 +25,3 @@ $("#back").click(function()
     <a href="#" class="button" id="back">POWRÓT</a>
   </form>
 </section>
-<?php
-include ("./nh_action.php");
-if(isset($_POST['mail']))
-  nh_action($_POST['mail']);
-else
-  {
-    echo (`
-    <script type="text/javascript">
-      alert("Podaj poprawny mail");
-    </script>
-    `);
-  }
-?>
