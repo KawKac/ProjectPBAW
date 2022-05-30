@@ -24,22 +24,22 @@
 										if(intval($duplicate_email['total'])==0)
 											if(intval($duplicate_login['total'])==0)
 												registry_action($name,$vorname,$login,$password,$email,$conn);
-											else {$error = '<script>alert("Użytkownik o podanym loginie już istnieje");header("Location:../");$("#intro").load("registry.php");</script>';header("Location:../");setcookie('info',2,time());}
-										else {$error = '<script>alert("Użytkownik o podanym emailu już istnieje");header("Location:../");$("#intro").load("registry.php");</script>';header("Location:../");setcookie('info',2,time());}
-									else {$error = '<script>alert("Podałeś różne maile");header("Location:../");$("#intro").load("registry.php");</script>';header("Location:../");setcookie('info',2,time());}
-								else {$error =  '<script>alert("Podałeś różne hasła");header("Location:../");$("#intro").load("registry.php");</script>';header("Location:../");setcookie('info',2,time());}
-							else {$error =  '<script>alert("Proszę o powtórzenie Twojego e-maila");header("Location:../");<$("#intro").load("registry.php");/script>';header("Location:../");setcookie('info',2,time());}
-						else {$error =  '<script>alert("Proszę o podanie Twojego e-maila");header("Location:../");$("#intro").load("registry.php");</script>';header("Location:../");setcookie('info',2,time());}
-					else {$error =  '<script>alert("Proszę o powtórzenie Twojego hasła");header("Location:../");$("#intro").load("registry.php");</script>';header("Location:../");setcookie('info',2,time());}
-				else {$error =  '<script>alert("Proszę o podanie Twojego hasła");header("Location:../");$("#intro").load("registry.php");</script>';header("Location:../");setcookie('info',2,time());}
-			else {$error =  '<script>alert("Proszę o podanie Twojego loginu");header("Location:../");$("#intro").load("registry.php");</script>';header("Location:../");setcookie('info',2,time());}
-		else {$error =  '<script>alert("Proszę o podanie Twojego nazwiska");header("Location:../");$("#intro").load("registry.php");</script>';header("Location:../");setcookie('info',2,time());}
-	else {$error =  '<script>alert("Proszę o podanie Twojego imienia");header("Location:../");$("#intro").load("registry.php");</script>';header("Location:../");setcookie('info',2,time());}
+											else {$error = '<script>alert("Użytkownik o podanym loginie już istnieje");header("Location:../");$("#intro").load("registry.php");</script>';header("Location:../");setcookie('info',2,time()+1800);}
+										else {$error = '<script>alert("Użytkownik o podanym emailu już istnieje");header("Location:../");$("#intro").load("registry.php");</script>';header("Location:../");setcookie('info',2,time()+1800);}
+									else {$error = '<script>alert("Podałeś różne maile");header("Location:../");$("#intro").load("registry.php");</script>';header("Location:../");setcookie('info',2,time()+1800);}
+								else {$error =  '<script>alert("Podałeś różne hasła");header("Location:../");$("#intro").load("registry.php");</script>';header("Location:../");setcookie('info',2,time()+1800);}
+							else {$error =  '<script>alert("Proszę o powtórzenie Twojego e-maila");header("Location:../");<$("#intro").load("registry.php");/script>';header("Location:../");setcookie('info',2,time()+1800);}
+						else {$error =  '<script>alert("Proszę o podanie Twojego e-maila");header("Location:../");$("#intro").load("registry.php");</script>';header("Location:../");setcookie('info',2,time()+1800);}
+					else {$error =  '<script>alert("Proszę o powtórzenie Twojego hasła");header("Location:../");$("#intro").load("registry.php");</script>';header("Location:../");setcookie('info',2,time()+1800);}
+				else {$error =  '<script>alert("Proszę o podanie Twojego hasła");header("Location:../");$("#intro").load("registry.php");</script>';header("Location:../");setcookie('info',2,time()+1800);}
+			else {$error =  '<script>alert("Proszę o podanie Twojego loginu");header("Location:../");$("#intro").load("registry.php");</script>';header("Location:../");setcookie('info',2,time()+1800);}
+		else {$error =  '<script>alert("Proszę o podanie Twojego nazwiska");header("Location:../");$("#intro").load("registry.php");</script>';header("Location:../");setcookie('info',2,time()+1800);}
+	else {$error =  '<script>alert("Proszę o podanie Twojego imienia");header("Location:../");$("#intro").load("registry.php");</script>';header("Location:../");setcookie('info',2,time()+1800);}
 	echo $error;
 
 	function registry_action($name,$vorname,$login,$password,$email,$conn)
 	{
-		setcookie('info',0,time());
+		setcookie('info',0,time()+1800);
 		$sql = "INSERT INTO `users_chmode`(`ID_USERS`, `ID_CHMODE`) VALUES ('$login', 1)";
 		mysqli_query($conn,$sql);
 		$sql = "INSERT INTO `users`(`IMIE`, `NAZWISKO`, `LOGIN`, `HASLO`, `E_MAIL`) VALUES ('$name','$vorname','$login','$password','$email')";

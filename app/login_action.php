@@ -6,13 +6,13 @@
 	if($pass==$opposit_of_login)
 	{
 		$chmode=mysqli_query($conn,"SELECT `ID_CHMODE` FROM `user_chmode` WHERE `ID_USER`=$login");
-		setcookie('chmode',$chmode,time());
-		setcookie('user',$login,time());
-		setcookie('info',0,time());
+		setcookie('chmode',$chmode,time()+1800);
+		setcookie('user',$login,time()+1800);
+		setcookie('info',0,time()+1800);
 		session_start();
 		header("Location: ../");
 	} else {
-		setcookie('info',1,time());
+		setcookie('info',1,time()+1800);
 		header("Location: ../");
 	}
 ?>

@@ -25,7 +25,6 @@ foreach (glob("assets/js/*.js") as $filename)	if(!($filename=="assets/js/main.js
 			<div id="wrapper">
 					<section class="wrapper style1 fullscreen fade-up" id="intro">
 						<?php
-						if(!(isset($_COOKIE['info'])))setcookie('info',2);
 						include('app/wrapper.php');
 						wrapper($_COOKIE['info']);
 						?>
