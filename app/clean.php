@@ -18,14 +18,14 @@ foreach (glob("assets/js/*.js") as $filename)	if(!($filename=="assets/js/main.js
 					if(isset($_SESSION['chmode']))
 						check($_SESSION['chmode']);
 					else
-						check(1);
+						check();
 				?>
 			</section>
 
 			<div id="wrapper">
 					<section class="wrapper style1 fullscreen fade-up" id="intro">
 						<?php
-						if(!(isset($_SESSION['info'])))$_SESSION['info']=2;
+						if(!(isset($_SESSION['info'])))$_SESSION['info']=0;
 						include('app/wrapper.php');
 						wrapper($_SESSION['info']);
 						?>

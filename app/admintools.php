@@ -15,7 +15,7 @@
     </tr>
     <?php
     $sql="SELECT `IMIE`, `NAZWISKO`, `LOGIN`, `E_MAIL`, `TELEFON` FROM `users`";
-      while ($row = mysql_fetch_assoc($sql )) {
+      while ($row = mysql_fetch_assoc($sql)) {
         echo "<tr>";
         echo "<td>$row['IMIE']</td>";
         echo "<td>$row['NAZWISKO']</td>";
@@ -23,7 +23,6 @@
         echo "<td>$row['E_MAIL']</td>";
         echo "<td>$row['TELEFON']</td>";
         echo "<td><input type='checkbox' name='' value='' checked></td>";
-
         echo "</tr>";
       }
     ?>
