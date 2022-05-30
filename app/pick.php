@@ -7,10 +7,7 @@
       KOD KRESKOWY: <input type="text" name="ean">
     </div>
     <div class="col-6 col-12-xsmall">
-      LPN: <input type="text" name="lpn">
-    </div>
-    <div class="col-6 col-12-xsmall">
-      STAN: <input type="text" name="ilosc">
+      NUMER WYSYŁKI: <input type="text" name="noow">
     </div><br>
     <input type="submit" value="DODAJ">
   </form>

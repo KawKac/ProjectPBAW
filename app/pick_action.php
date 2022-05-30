@@ -1,13 +1,17 @@
 <?php
   include('database.php');
-  if(!(empty($_POST['ean']))&&!(empty($_POST['name']))&&!(empty($_POST['ilosc'])))
+  if(!(empty($_POST['nool']))&&!(empty($_POST['now']))&&!(empty($_POST['ean'])))
   {
-    $ean=intval($_POST['ean']);
-    $lpn=$_POST['lpn'];
-    $stan=intval($_POST['stan']);
+    $nool=$_POST['nool'];
+    $noow=$_POST['noow'];
+    $ean=$_POST['ean'];
+    $login=$_COOKIE['user'];
     $data=date("Y-m-d");
-    $sql="INSERT INTO `items_state`(`ID`, `ID_ITEM`, `LPN`, `STAN`, `PRZYJECIE`) VALUES ('','$ean','$lpn','$stan','$data')";
+    $sql="INSERT INTO `nool`(`ID`, `NOOL`,`ID_ITEM`) VALUES ('','$nool','$ean')";
     mysqli_query($conn,$sql);
+    $sql="INSERT INTO `noow`(`NOOL`,`NOOW`) VALUES ('','$nool','$noow')";
+    mysqli_query($conn,$sql);
+    $sql="INSERT INTO `orders`(`ID_NOOW`,`ID_USER`,`WYSYLKA`) VALUES ('$noow','$login','$data')";
     setcookie('info','6',time()+1800,'/');
     setcookie('work','0',time()+1800,'/');
     setcookie('message','Dodano przedmiot',time()+1800,'/');
