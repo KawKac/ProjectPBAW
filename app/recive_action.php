@@ -9,6 +9,8 @@
     {
       $sql="INSERT INTO `items`(`KOD`, `NAZWA`, `ILOSC`) VALUES ('".$ean."','".$name."','".$ilosc."')";
       mysqli_query($conn,$sql);
+      $sql="INSERT INTO `items_state`(`ID`, `ID_ITEM`, `LPN`, `STAN`, `PRZYJECIE`) VALUES ('','".$ean."','','0','"date()"')";
+      mysqli_query($conn,$sql);
       setcookie('info','5',time()+1800,'/');
       setcookie('work','3',time()+1800,'/');
       setcookie('message','Dodano przedmiot',time()+1800,'/');
@@ -22,4 +24,5 @@
     setcookie('message','Proszę uzupełnić pola poprawnie',time()+1800,'/');
     header("Location: ../");
   }
+  mysqli_close($conn);
 ?>

@@ -12,6 +12,6 @@
     <input type="submit" value="DODAJ">
   </form>
   <div class="">
-    <?php echo $_COOKIE['message']; ?>
+    <?php error_reporting(E_ALL ^ E_NOTICE);echo $_COOKIE['message']; ?>
   </div>
 </section>

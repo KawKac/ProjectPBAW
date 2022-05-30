@@ -6,6 +6,23 @@
     <a href="#" class="button" id="cret">C-Ret</a>
   </div>
   <div id="work_contents">
+    <?php
+    error_reporting(E_ALL ^ E_NOTICE);
+    switch ($_COOKIE['work']) {
+      case 0:
+        include('pick.php');
+        break;
+      case 1:
+        include('stow.php');
+        break;
+      case 2:
+        include('recive.php');
+        break;
+      case 3:
+        include('cret.php');
+        break;
+
+    } ?>
     <!-- tu wczytają się narzędzia do pracy w zależności który przycisk się wybierze -->
   </div>
 </section>
