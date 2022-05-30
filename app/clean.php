@@ -15,8 +15,8 @@ foreach (glob("assets/js/*.js") as $filename)	if(!($filename=="assets/js/main.js
 			<section id="sidebar">
 				<?php
 					include('check.php');
-					if(isset($_SESSION['chmode']))
-						check($_SESSION['chmode']);
+					if(isset($_SESSION['newsession']['chmode']))
+						check($_SESSION['newsession']['chmode']);
 					else
 						check();
 				?>
@@ -25,9 +25,9 @@ foreach (glob("assets/js/*.js") as $filename)	if(!($filename=="assets/js/main.js
 			<div id="wrapper">
 					<section class="wrapper style1 fullscreen fade-up" id="intro">
 						<?php
-						if(!(isset($_SESSION['info'])))$_SESSION['info']=0;
+						if(!(isset($_SESSION['newsession']['info'])))$_SESSION['newsession']['info']=0;
 						include('app/wrapper.php');
-						wrapper($_SESSION['info']);
+						wrapper($_SESSION['newsession']['info']);
 						?>
 					</section>
 			</div>

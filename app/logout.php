@@ -1,7 +1,7 @@
 <?php
 session_start();
-unset($_SESSION["login"]);
-unset($_SESSION["password"]);
-$_SESSION['info']=0;
+unset($_SESSION['newsession']["login"]);
+unset($_SESSION['newsession']["password"]);
+$_SESSION['newsession']['info']=0;
 header("Location:../");
 ?>
