@@ -15,9 +15,8 @@ foreach (glob("assets/js/*.js") as $filename)	if(!($filename=="assets/js/main.js
 			<section id="sidebar">
 				<?php
 					include('check.php');
-					echo isset($_COOCKIE['chmode']);
-					if(isset($_COOCKIE['chmode']))
-						check($_COOCKIE['chmode']);
+					if(isset($_COOKIE['chmode']))
+						check($_COOKIE['chmode']);
 					else
 						check();
 				?>
@@ -26,9 +25,9 @@ foreach (glob("assets/js/*.js") as $filename)	if(!($filename=="assets/js/main.js
 			<div id="wrapper">
 					<section class="wrapper style1 fullscreen fade-up" id="intro">
 						<?php
-						if(!(isset($_COOCKIE['info'])))setcookie('info',2);
+						if(!(isset($_COOKIE['info'])))setcookie('info',2);
 						include('app/wrapper.php');
-						wrapper($_COOCKIE['info']);
+						wrapper($_COOKIE['info']);
 						?>
 					</section>
 			</div>
