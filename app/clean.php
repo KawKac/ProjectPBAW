@@ -14,17 +14,16 @@ foreach (glob("assets/js/*.js") as $filename)	if(!($filename=="assets/js/main.js
 
 			<section id="sidebar">
 				<?php
+					print_r($_COOKIE);
 					include('check.php');
-					if(isset($_COOKIE['chmode']))
-						check($_COOKIE['chmode']);
-					else
-						check();
+					check($_COOKIE['chmode']);
 				?>
 			</section>
 
 			<div id="wrapper">
 					<section class="wrapper style1 fullscreen fade-up" id="intro">
 						<?php
+						print_r($_COOKIE);
 						include('app/wrapper.php');
 						wrapper($_COOKIE['info']);
 						?>
