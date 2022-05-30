@@ -14,7 +14,7 @@
     </div><br>
     <input type="submit" value="DODAJ">
   </form>
-  <div class="">
+  <div class="col-6 col-12-xsmall">
     <?php error_reporting(E_ALL ^ E_NOTICE);echo $_COOKIE['message'];setcookie('message','Proszę uzupełnić pola poprawnie',time()-1,'/'); ?>
   </div>
 </section>

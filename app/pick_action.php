@@ -9,14 +9,14 @@
     $sql="INSERT INTO `items_state`(`ID`, `ID_ITEM`, `LPN`, `STAN`, `PRZYJECIE`) VALUES ('','$ean','$lpn','$stan','$data')";
     mysqli_query($conn,$sql);
     setcookie('info','6',time()+1800,'/');
-    setcookie('work','3',time()+1800,'/');
+    setcookie('work','0',time()+1800,'/');
     setcookie('message','Dodano przedmiot',time()+1800,'/');
     header("Location: ../");
   }
   else
   {
     setcookie('info','6',time()+1800,'/');
-    setcookie('work','3',time()+1800,'/');
+    setcookie('work','0',time()+1800,'/');
     setcookie('message','Proszę uzupełnić pola poprawnie',time()+1800,'/');
     header("Location: ../");
   }
