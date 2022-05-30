@@ -12,10 +12,16 @@ function wrapper($value=0)
       include('registry.php');
       break;
     case 3:
-      include('nh.php');
+      include('registry_successfull.php');
       break;
     case 4:
+      include('nh.php');
+      break;
+    case 5:
       include('options.php');
+      break;
+    case 6:
+      include('work.php');
       break;
   }
 }

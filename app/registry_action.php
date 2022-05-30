@@ -39,7 +39,7 @@
 
 	function registry_action($name,$vorname,$login,$password,$email,$conn)
 	{
-		setcookie('info','0',time()+1800);
+		setcookie('info','3',time()+1800);
 		$sql = "INSERT INTO `users_chmode`(`ID_USERS`, `ID_CHMODE`) VALUES ('$login', 1)";
 		mysqli_query($conn,$sql);
 		$sql = "INSERT INTO `users`(`IMIE`, `NAZWISKO`, `LOGIN`, `HASLO`, `E_MAIL`) VALUES ('$name','$vorname','$login','$password','$email')";
