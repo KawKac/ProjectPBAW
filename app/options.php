@@ -1,39 +1,43 @@
 <section class="content_page">
-  <form class="" action="index.html" method="post">
+  <form class="" action="option_action.php" method="post">
     <section class="row gtr-uniform">DANE:</section>
       <div class="col-6 col-12-xsmall">
-        Hasło: <input type="password" name="" value="">
+        Hasło: <input type="password" name="password">
       </div>
+      <br>
     <section class="row gtr-uniform">KONTAKT:</section>
     <div class="col-6 col-12-xsmall">
-      Numer telofonu: <input type="password" name="" value="">
+      Numer telofonu: <input type="text" name="telefon">
     </div>
     <div class="col-6 col-12-xsmall">
-      E-mail: <input type="password" name="" value="">
-    </div>
-    <section class="row gtr-uniform">ADRES:</section>
-    <div class="col-6 col-12-xsmall">
-      Ulica: <input type="password" name="" value="">
-    </div>
-    <div class="col-6 col-12-xsmall">
-      Budynek: <input type="password" name="" value="">
-    </div>
-    <div class="col-6 col-12-xsmall">
-      Mieszkania: <input type="password" name="" value="">
-    </div>
-    <div class="col-6 col-12-xsmall">
-      Miasto: <input type="password" name="" value="">
-    </div>
-    <div class="col-6 col-12-xsmall">
-      Kod pocztowy: <input type="password" name="" value="">
-    </div>
-    <div class="col-6 col-12-xsmall">
-      Państwo: <input type="password" name="" value="">
+      E-mail: <input type="email" name="email">
     </div>
     <br>
-    <input type="submit" name="" value="Zapisz"><br>
+    <section class="row gtr-uniform">ADRES:</section>
     <div class="col-6 col-12-xsmall">
-      Usuń konto: <input type="button" name="" value="Usuń">
+      Ulica: <input type="text" name="ulica">
     </div>
+    <div class="col-6 col-12-xsmall">
+      Budynek: <input type="text" name="budynek">
+    </div>
+    <div class="col-6 col-12-xsmall">
+      Mieszkania: <input type="text" name="mieszkania">
+    </div>
+    <div class="col-6 col-12-xsmall">
+      Miasto: <input type="text" name="miasto">
+    </div>
+    <div class="col-6 col-12-xsmall">
+      Kod pocztowy: <input type="text" name="kp">
+    </div>
+    <div class="col-6 col-12-xsmall">
+      Państwo: <input type="text" name="panstwo">
+    </div>
+    <br>
+    <input type="submit" name="" value="Zapisz">
   </form>
+  <div class="col-6 col-12-xsmall">
+    <form class="" action="delete_account.php" method="post">
+      Usuń konto: <input type="submit" name="delete" value="Usuń">
+    </form>
+  </div>
 </section>
