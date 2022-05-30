@@ -11,10 +11,8 @@ foreach (glob("assets/js/*.js") as $filename)	if(!($filename=="assets/js/main.js
 ?>
 	</head>
 	<body class="is-preload">
-
 			<section id="sidebar">
 				<?php
-					print_r($_COOKIE);
 					include('check.php');
 					check($_COOKIE['chmode']);
 				?>
@@ -23,7 +21,6 @@ foreach (glob("assets/js/*.js") as $filename)	if(!($filename=="assets/js/main.js
 			<div id="wrapper">
 					<section class="wrapper style1 fullscreen fade-up" id="intro">
 						<?php
-						print_r($_COOKIE);
 						include('app/wrapper.php');
 						wrapper($_COOKIE['info']);
 						?>
