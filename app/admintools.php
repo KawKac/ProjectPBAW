@@ -15,18 +15,19 @@
     </tr>
     <?php
     $sql="SELECT `IMIE`, `NAZWISKO`, `LOGIN`, `E_MAIL`, `TELEFON` FROM `users`";
-      while ($row = mysql_fetch_assoc($sql)) {
+    $row = mysqli_fetch_assoc(mysqli_query($conn,$sql));
+    $num_row = mysqli_num_rows(mysqli_query($conn,$sql));
+      for($i=0;$i<$num_row;$i++) {
         echo "<tr>";
-        echo "<td>$row['IMIE']</td>";
-        echo "<td>$row['NAZWISKO']</td>";
-        echo "<td>$row['LOGIN']</td>";
-        echo "<td>$row['E_MAIL']</td>";
-        echo "<td>$row['TELEFON']</td>";
-        echo "<td><input type='checkbox' name='' value='' checked></td>";
+        echo "<td>".$row['IMIE']."</td>";
+        echo "<td>".$row['NAZWISKO']."</td>";
+        echo "<td>".$row['LOGIN']."</td>";
+        echo "<td>".$row['E_MAIL']."</td>";
+        echo "<td>".$row['TELEFON']."</td>";
         echo "</tr>";
       }
     ?>
   </table>
   <br>
-  <input type="submit" name="" value="">
+  <input type="submit" name="" value="zapisz">
 </form>
