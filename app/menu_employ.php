@@ -1,13 +1,13 @@
 <div class="inner">
   <nav>
     <ul>
-      <li><h2>Witaj <?php echo $_COOKIE['login']; ?></h2></li>
+      <li><h2>Witaj <?php echo $_COOKIE['user']; ?></h2></li>
       <li><a href="#" id="0">Welcome</a></li>
       <li><a href="#" id="1">Sprawdź zamówienie</a></li>
       <li><a href="#" id="2">Praca</a></li>
       <li><a href="#" id="3">Opcje</a></li>
     </ul>
+    <a href="app/logout.php" class="button">WYLOGUJ</a>
+    <script src="./assets/js/navbarcontrol/navbarcontrol_employ.js"></script>
   </nav>
 </div>
-<a href="app/logout.php" class="button">WYLOGUJ</a>
-<script src="./assets/js/navbarcontrol/navbarcontrol_employ.js"></script>

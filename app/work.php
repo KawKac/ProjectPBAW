@@ -9,3 +9,4 @@
     <!-- tu wczytają się narzędzia do pracy w zależności który przycisk się wybierze -->
   </div>
 </section>
+<script src="assets/js/work/work_action.js"></script>
