@@ -1,5 +1,5 @@
 <section class="content_page">
-  <form class="" action="option_action.php" method="post">
+  <form class="" action="app/option_action.php" method="post">
     <section class="row gtr-uniform">DANE:</section>
       <div class="col-6 col-12-xsmall">
         Hasło: <input type="password" name="password">

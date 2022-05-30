@@ -14,6 +14,9 @@ function wrapper($value=0)
     case 3:
       include('nh.php');
       break;
+    case 4:
+      include('options.php');
+      break;
   }
 }
  ?>
