@@ -5,21 +5,20 @@
     $ean=intval($_POST['ean']);
     $name=$_POST['name'];
     $ilosc=intval($_POST['ilosc']);
-    if(is_int($_POST['ean'])&&is_int($_POST['ilosc']))
-    {
-      $sql="INSERT INTO `items`(`KOD`, `NAZWA`, `ILOSC`) VALUES ('".$ean."','".$name."','".$ilosc."')";
-      mysqli_query($conn,$sql);
-      $sql="INSERT INTO `items_state`(`ID`, `ID_ITEM`, `LPN`, `STAN`, `PRZYJECIE`) VALUES ('','".$ean."','','0','"date()"')";
-      mysqli_query($conn,$sql);
-      setcookie('info','5',time()+1800,'/');
-      setcookie('work','3',time()+1800,'/');
-      setcookie('message','Dodano przedmiot',time()+1800,'/');
-      header("Location: ../");
-    }
+    $data=date("Y-m-d");
+    $sql="INSERT INTO `items`(`KOD`, `NAZWA`, `ILOSC`) VALUES ('$ean','$name','$ilosc')";
+    mysqli_query($conn,$sql);
+    echo mysqli_error($conn);
+    $sql="INSERT INTO `items_state`(`ID`, `ID_ITEM`, `LPN`, `STAN`, `PRZYJECIE`) VALUES ('','$ean','','0','$data')";
+    mysqli_query($conn,$sql);
+    setcookie('info','6',time()+1800,'/');
+    setcookie('work','3',time()+1800,'/');
+    setcookie('message','Dodano przedmiot',time()+1800,'/');
+    header("Location: ../");
   }
   else
   {
-    setcookie('info','5',time()+1800,'/');
+    setcookie('info','6',time()+1800,'/');
     setcookie('work','3',time()+1800,'/');
     setcookie('message','Proszę uzupełnić pola poprawnie',time()+1800,'/');
     header("Location: ../");
