@@ -7,16 +7,10 @@ $("#0").click(function()
 $("#1").click(function()
 {
   $("#intro").html("");
-  $("#intro").load("app/delivery.php");
-});
-
-$("#2").click(function()
-{
-  $("#intro").html("");
   $("#intro").load("app/work.php");
 });
 
-$("#3").click(function()
+$("#2").click(function()
 {
   $("#intro").html("");
   $("#intro").load("app/options.php");
