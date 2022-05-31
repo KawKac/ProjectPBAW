@@ -23,6 +23,9 @@ function wrapper($value=0)
     case 6:
       include('work.php');
       break;
+    case 7:
+      include('delivery.php');
+      break;
   }
 }
  ?>

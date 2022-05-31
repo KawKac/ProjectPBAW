@@ -7,28 +7,16 @@ $("#0").click(function()
 $("#1").click(function()
 {
   $("#intro").html("");
-  $("#intro").load("app/delivery.php");
+  $("#intro").load("app/options.php");
 });
 
 $("#2").click(function()
 {
   $("#intro").html("");
-  $("#intro").load("app/options.php");
-});
-
-$("#3").click(function()
-{
-  $("#intro").html("");
-  $("#intro").load("app/work.php");
-});
-
-$("#4").click(function()
-{
-  $("#intro").html("");
   $("#intro").load("app/admintools.php");
 });
 
-$("#5").click(function()
+$("#3").click(function()
 {
   $("#intro").html("");
   $("#intro").load("app/database_editor.php");
