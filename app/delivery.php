@@ -11,3 +11,13 @@
     </div>
   </form>
 </section>
+<section class="content_page">
+  <table>
+    <tr>
+      <?php
+        error_reporting(E_ALL ^ E_NOTICE);
+        print_r($_COOKIE['delivery']);
+      ?>
+    </tr>
+  </table>
+</section>

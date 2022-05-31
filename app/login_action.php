@@ -13,7 +13,8 @@
 		session_start();
 		header("Location: ../");
 	} else {
-		setcookie('info','1',time()+1800);
+		setcookie('message','Zły login lub hasło',time()+1800,'/');
+		setcookie('info','1',time()+1800,'/');
 		header("Location: ../");
 	}
 	mysqli_close($conn);
