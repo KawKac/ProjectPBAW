@@ -10,7 +10,7 @@ $('#haslo').focusout(function(){
 <section class="content_page">
   <h2 class="h2_center">REJESTRACJA</h2>
   <hr class="hr_dashed">
-  <?php error_reporting(E_ALL ^ E_NOTICE);echo '<div class="alert alert-danger" role="alert">'.$_COOKIE['message'].'</div>';setcookie('message','',time()-1,'/'); ?>
+  <?php if(!empty($_COOKIE['message'])){error_reporting(E_ALL ^ E_NOTICE);echo '<div class="alert alert-danger" role="alert">'.$_COOKIE['message'].'</div>';setcookie('message','',time()-1,'/');} ?>
   <form class="" action="./app/registry_action.php" method="post" name="rejestracja">
     <div class="row gtr-uniform">
       <div class="col-6 col-12-xsmall">
