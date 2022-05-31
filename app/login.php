@@ -1,7 +1,7 @@
 <section class="content_page">
   <h2 class="h2_center">ZALOGUJ</h2>
   <hr class="hr_dashed">
-  <?php error_reporting(E_ALL ^ E_NOTICE);echo $_COOKIE['message'];setcookie('message','',time()-1,'/'); ?>
+  <?php error_reporting(E_ALL ^ E_NOTICE);echo '<div class="alert alert-danger" role="alert">'.$_COOKIE['message'].'</div>';setcookie('message','',time()-1,'/'); ?>
   <form class="" action="app/login_action.php" method="post">
     <div class="row gtr-uniform">
       <div class="col-6 col-12-xsmall">

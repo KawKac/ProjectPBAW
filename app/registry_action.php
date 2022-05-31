@@ -12,13 +12,13 @@
 	$error='';
 	$duplicate_email=mysqli_fetch_assoc(mysqli_query($conn,"SELECT COUNT(*) AS `total` FROM `users` WHERE E_MAIL='$email'"));
 	$duplicate_login=mysqli_fetch_assoc(mysqli_query($conn,"SELECT COUNT(*) AS `total` FROM `users` WHERE LOGIN='$login'"));
-	if(isset($name))
-		if(isset($vorname))
-			if(isset($login))
-				if(isset($password))
-					if(isset($ppassword))
-						if(isset($email))
-							if(isset($pemail))
+	if(!empty($name))
+		if(!empty($vorname))
+			if(!empty($login))
+				if(!empty($password))
+					if(!empty($ppassword))
+						if(!empty($email))
+							if(!empty($pemail))
 								if($password==$ppassword)
 									if($email==$pemail)
 										if(intval($duplicate_email['total'])==0)
