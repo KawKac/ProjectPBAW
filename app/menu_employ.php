@@ -7,6 +7,6 @@
       <li><a href="#" id="2">Opcje</a></li>
     </ul>
     <a href="app/logout.php" class="button">WYLOGUJ</a>
-    <script src="./assets/js/navbarcontrol/navbarcontrol_employ.js"></script>
+    <script src="../assets/js/navbarcontrol/navbarcontrol_employ.js"></script>
   </nav>
 </div>
