@@ -14,7 +14,7 @@ $('#haslo').focusout(function(){
   <form class="" action="./app/registry_action.php" method="post" name="rejestracja">
     <div class="row gtr-uniform">
       <div class="col-6 col-12-xsmall">
-        <input type="text" name="name" placeholder="IMIĘ">
+        <input type="text" name="name" placeholder="IMIE">
       </div>
       <div class="col-6 col-12-xsmall">
         <input type="text" name="vorname" placeholder="NAZWISKO">
