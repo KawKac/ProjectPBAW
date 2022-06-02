@@ -1,4 +1,7 @@
 <?php
+if($_COOKIE['chmode']!=2)
+  echo "Access denied!";
+else {
   include('database.php');
   if(!(empty($_POST['nool']))&&!(empty($_POST['now']))&&!(empty($_POST['ean'])))
   {
@@ -25,4 +28,5 @@
     header("Location: ../");
   }
   mysqli_close($conn);
+}
 ?>

@@ -1,3 +1,7 @@
+<?php
+if($_COOKIE['chmode']!=2)
+  echo "Access denied!";
+else { ?>
 <section class="content_page">
   <form action="app/stow_action.php" method="post">
     <div class="col-6 col-12-xsmall">
@@ -18,3 +22,4 @@
     <?php error_reporting(E_ALL ^ E_NOTICE);echo $_COOKIE['message'];setcookie('message','Proszę uzupełnić pola poprawnie',time()-1,'/'); ?>
   </div>
 </section>
+<?php } ?>

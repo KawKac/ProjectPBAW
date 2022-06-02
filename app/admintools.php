@@ -1,4 +1,9 @@
-<?php include('database.php'); ?>
+<?php
+include('database.php');
+if($_COOKIE['chmode']!=3)
+  echo "Access denied!";
+else {
+    echo '
 <form class="" action="index.html" method="post">
   <table>
     <tr>
@@ -13,7 +18,7 @@
       <th>EDYTUJ</th>
       <th>USUŃ</th>
     </tr>
-    <?php
+    ';
     $sql="SELECT `IMIE`, `NAZWISKO`, `LOGIN`, `E_MAIL`, `TELEFON` FROM `users`";
     $row = mysqli_fetch_assoc(mysqli_query($conn,$sql));
     $num_row = mysqli_num_rows(mysqli_query($conn,$sql));
@@ -26,8 +31,9 @@
         echo "<td>".$row['TELEFON']."</td>";
         echo "</tr>";
       }
-    ?>
+  echo '
   </table>
   <br>
   <input type="submit" name="" value="zapisz">
 </form>
+  ';}?>

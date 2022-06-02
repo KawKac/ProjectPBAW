@@ -1,4 +1,7 @@
 <?php
+if($_COOKIE['chmode']!=2)
+  echo "Access denied!";
+else {
   error_reporting(E_ALL ^ E_NOTICE);
   include('database.php');
   $kod=$_POST['ean'];
@@ -21,4 +24,5 @@
     setcookie('message','Proszę uzupełnić pola poprawnie',time()+1800,'/');
     header("Location: ../");
   }
+}
  ?>

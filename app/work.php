@@ -1,3 +1,7 @@
+<?php
+if($_COOKIE['chmode']!=2)
+  echo "Access denied!";
+else { ?>
 <section>
   <div class="col-6 col-12-xsmall">
     <a href="#" class="button" id="pick">Pick</a>
@@ -27,3 +31,4 @@
   </div>
 </section>
 <script src="assets/js/work/work_action.js"></script>
+<?php } ?>
