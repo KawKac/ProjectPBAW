@@ -30,22 +30,22 @@ else { ?>
       echo "<td class='edit'>".$row[4]."</td>";
       switch ($row[5]) {
         case 1:
-          echo "<td class='edit'><a href='{url action=}/$arr[$i]}'>USER</a></td>";
-          echo "<td class='edit'><a href='{url action=}/$arr[$i]}'>EMPLOY</a></td>";
-          echo "<td class='edit'><a href='{url action=}/$arr[$i]}'>ADMIN</a></td>";
+          echo "<td class='edit'><a href='{url action=}/$arr[$i]}' class='button'>USER</a></td>";
+          echo "<td class='edit'><a href='{url action=}/$arr[$i]}' class='button'>EMPLOY</a></td>";
+          echo "<td class='edit'><a href='{url action=}/$arr[$i]}' class='button'>ADMIN</a></td>";
           break;
         case 2:
-          echo "<td class='edit'><a href='{url action=}/$arr[$i]}'>USER</a></td>";
-          echo "<td class='edit'><a href='{url action=}/$arr[$i]}'>EMPLOY</a></td>";
-          echo "<td class='edit'><a href='{url action=}/$arr[$i]}'>ADMIN</a></td>";
+          echo "<td class='edit'><a href='{url action=}/$arr[$i]}' class='button'>USER</a></td>";
+          echo "<td class='edit'><a href='{url action=}/$arr[$i]}' class='button'>EMPLOY</a></td>";
+          echo "<td class='edit'><a href='{url action=}/$arr[$i]}' class='button'>ADMIN</a></td>";
           break;
         case 3:
-          echo "<td class='edit'><a href='{}/$arr[$i]}'>USER</a></td>";
-          echo "<td class='edit'><a href='{}/$arr[$i]}'>EMPLOY</a></td>";
-          echo "<td class='edit'><a href='{}/$arr[$i]}'>ADMIN</a></td>";
+          echo "<td class='edit'><a href='{/$arr[$i]}' class='button'>USER</a></td>";
+          echo "<td class='edit'><a href='{/$arr[$i]}' class='button'>EMPLOY</a></td>";
+          echo "<td class='edit'><a href='{/$arr[$i]}' class='button'>ADMIN</a></td>";
           break;
       }
-      echo "<td class='edit'><a href='{}/$arr[$i]}'>ADMIN</a></td>";
+      echo "<td class='edit'><a href='{/$arr[$i]}'>ADMIN</a></td>";
       echo "</tr>";
     }
   echo '
