@@ -5,7 +5,7 @@ if($_SESSION['chmode']!=3)
   echo "Access denied!";
 else
 {
-  if(!empty($_COOKIE['message'])) echo "<h3>".$_COOKIE['message']."</h3>";
+  if(!empty($_COOKIE['message'])) echo $_COOKIE['message'];
   ?>
   <table>
     <tr>
