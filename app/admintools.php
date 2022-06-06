@@ -48,10 +48,10 @@ else
           echo "<td class='edit'><a href='app/admintools_action.php?row=".$i."&login=".$row[2]."&chmode=3' class='button'>ADMIN</a></td>";
           break;
       }
-      if(intval($row[6])==1)
+      if($row[6]=='1')
         echo "<td class='edit'><a href='app/admintools_action.php?row=".$i."&login=".$row[2]."&dezaktywuj=`0`'>DEZAKTYWUJ</a></td>";
-      elseif (intval($row[6])==0)
-        echo "<td class='edit'><a href='app/admintools_action.php?row=".$i."&login=".$row[2]."&dezaktywuj=`1`'>AKTYWUJ</a></td>";
+      elseif ($row[6]=='0')
+        echo "<td class='edit'><a href='app/admintools_action.php?row=".$i."&login=".$row[2]."&dezaktywuj=1'>AKTYWUJ</a></td>";
       echo "</tr>";
     }
   echo '</table>';
