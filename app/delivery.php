@@ -1,7 +1,7 @@
 <section class="content_page">
   <h2 class="h2_center">SPRAWDŹ ZAMÓWIENIE</h2>
   <hr class="hr_dashed">
-  <form class="" action="app/delivery_action.php" method="get">
+  <form class="" action="app/delivery_action.php" method="post">
     <div class="row gtr-uniform">
       <div class="col-12">
         <input type="text" name="delivery" placeholder="KOD ZAMÓWIENIA">
@@ -10,14 +10,5 @@
       </div>
     </div>
   </form>
-</section>
-<section class="content_page">
-  <table>
-    <tr>
-      <?php
-        error_reporting(E_ALL ^ E_NOTICE);
-        print_r($_COOKIE['delivery']);
-      ?>
-    </tr>
-  </table>
+  <?php if(!empty($_COOKIE['deliwery'])) echo $_COOKIE['deliwery']; ?>
 </section>

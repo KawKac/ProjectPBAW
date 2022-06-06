@@ -1,8 +1,13 @@
 <?php
 include("database.php");
-$delivery=$_POST['delivery'];
-$sql=mysqli_fetch_assoc(mysqli_query($conn,"SELECT * FROM `orders` WHERE `ID_NOOW`='$delivery'"));
-setcookie('delivery',$sql,date()+1800,'/');
-setcookie('info','7',date()+1800,'/');
-header("Location: ../");
-?>
+$d=$_POST["delivery"];
+$sql=mysqli_query($conn,"SELECT `STATUS` FROM `orders` WHERE `ID_NOOW`='$d'")or die(mysqli_error($conn));
+$row=mysqli_num_rows($sql);
+if($row!=0)
+{
+  setcookie('deliwery',"twojastara",time()+10,'/');
+}
+else {
+  setcookie('deliwery',"twójstary",time()+10,'/');
+}
+echo $_COOKIE["deliwery"];
