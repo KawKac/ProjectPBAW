@@ -15,9 +15,3 @@ $("#2").click(function()
   $("#intro").html("");
   $("#intro").load("app/admintools.php");
 });
-
-$("#3").click(function()
-{
-  $("#intro").html("");
-  $("#intro").load("app/database_editor.php");
-});

@@ -4,7 +4,7 @@
     <ul>
       <li><h2>Witaj <?php echo $_SESSION['user']; ?></h2></li>
       <li><a href="#" id="0">Welcome</a></li>
-      <li><a href="#" id="1">Sprawdź zamówienie</a></li>
+      <li><a href="#" id="1">Twoje zamówienie</a></li>
       <li><a href="#" id="2">Opcje</a></li>
     </ul>
   </nav>

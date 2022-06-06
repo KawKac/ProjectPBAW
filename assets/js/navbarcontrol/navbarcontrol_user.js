@@ -7,7 +7,7 @@ $("#0").click(function()
 $("#1").click(function()
 {
   $("#intro").html("");
-  $("#intro").load("app/work.php");
+  $("#intro").load("app/twojezamowienia.php");
 });
 
 $("#2").click(function()
