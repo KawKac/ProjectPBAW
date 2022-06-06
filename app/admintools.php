@@ -22,7 +22,6 @@ else
 <?php
     $sql="SELECT `users`.`IMIE`, `users`.`NAZWISKO`, `users`.`LOGIN`, `users`.`E_MAIL`, `users`.`TELEFON`, `users_chmode`.`ID_CHMODE`, `users`.`AKTYWNE` FROM `users`, `users_chmode` WHERE `users`.`LOGIN` LIKE `users_chmode`.`ID_USERS`";
     $wynik = mysqli_query($conn,$sql);
-    $i = 0;
     $arr = mysqli_fetch_array($wynik);
     while($row = mysqli_fetch_row($wynik)) {
       echo "<tr>";
@@ -33,25 +32,25 @@ else
       echo "<td class='edit'>".$row[4]."</td>";
       switch ($row[5]) {
         case 1:
-          echo "<td class='edit'><a href='app/admintools_action.php?row=".$i."&login=".$row[2]."&chmode=1' class='button'>USER</a></td>";
-          echo "<td class='edit'><a href='app/admintools_action.php?row=".$i."&login=".$row[2]."&chmode=2' class='button'>EMPLOY</a></td>";
-          echo "<td class='edit'><a href='app/admintools_action.php?row=".$i."&login=".$row[2]."&chmode=3' class='button'>ADMIN</a></td>";
+          echo "<td class='edit'><a href='app/admintools_action.php?login=".$row[2]."&chmode=1' class='button'>USER</a></td>";
+          echo "<td class='edit'><a href='app/admintools_action.php?login=".$row[2]."&chmode=2' class='button'>EMPLOY</a></td>";
+          echo "<td class='edit'><a href='app/admintools_action.php?login=".$row[2]."&chmode=3' class='button'>ADMIN</a></td>";
           break;
         case 2:
-          echo "<td class='edit'><a href='app/admintools_action.php?row=".$i."&login=".$row[2]."&chmode=1' class='button'>USER</a></td>";
-          echo "<td class='edit'><a href='app/admintools_action.php?row=".$i."&login=".$row[2]."&chmode=2' class='button'>EMPLOY</a></td>";
-          echo "<td class='edit'><a href='app/admintools_action.php?row=".$i."&login=".$row[2]."&chmode=3' class='button'>ADMIN</a></td>";
+          echo "<td class='edit'><a href='app/admintools_action.php?login=".$row[2]."&chmode=1' class='button'>USER</a></td>";
+          echo "<td class='edit'><a href='app/admintools_action.php?login=".$row[2]."&chmode=2' class='button'>EMPLOY</a></td>";
+          echo "<td class='edit'><a href='app/admintools_action.php?login=".$row[2]."&chmode=3' class='button'>ADMIN</a></td>";
           break;
         case 3:
-          echo "<td class='edit'><a href='app/admintools_action.php?row=".$i."&login=".$row[2]."&chmode=1' class='button'>USER</a></td>";
-          echo "<td class='edit'><a href='app/admintools_action.php?row=".$i."&login=".$row[2]."&chmode=2' class='button'>EMPLOY</a></td>";
-          echo "<td class='edit'><a href='app/admintools_action.php?row=".$i."&login=".$row[2]."&chmode=3' class='button'>ADMIN</a></td>";
+          echo "<td class='edit'><a href='app/admintools_action.php?login=".$row[2]."&chmode=1' class='button'>USER</a></td>";
+          echo "<td class='edit'><a href='app/admintools_action.php?login=".$row[2]."&chmode=2' class='button'>EMPLOY</a></td>";
+          echo "<td class='edit'><a href='app/admintools_action.php?login=".$row[2]."&chmode=3' class='button'>ADMIN</a></td>";
           break;
       }
       if($row[6]=='1')
-        echo "<td class='edit'><a href='app/admintools_action.php?row=".$i."&login=".$row[2]."&dezaktywuj=`0`'>DEZAKTYWUJ</a></td>";
+        echo "<td class='edit'><a href='app/admintools_action.php?login=".$row[2]."&dezaktywuj=`0`'>DEZAKTYWUJ</a></td>";
       elseif ($row[6]=='0')
-        echo "<td class='edit'><a href='app/admintools_action.php?row=".$i."&login=".$row[2]."&dezaktywuj=1'>AKTYWUJ</a></td>";
+        echo "<td class='edit'><a href='app/admintools_action.php?login=".$row[2]."&dezaktywuj=1'>AKTYWUJ</a></td>";
       echo "</tr>";
     }
   echo '</table>';
