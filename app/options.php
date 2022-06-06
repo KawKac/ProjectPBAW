@@ -1,23 +1,23 @@
 <?php session_start(); ?>
 <section class="content_page">
-  <form class="" action="app/option_action.php" method="post">
-    <section class="row gtr-uniform">DANE:</section>
+  <form class="content_page" action="app/option_action.php" method="post">
+    <h2>DANE:</h2>
       <div class="col-6 col-12-xsmall">
         Hasło: <input type="password" name="password">
       </div>
       <div class="col-6 col-12-xsmall">
         Powtórz hasło: <input type="password" name="ppassword">
       </div>
-      <br>
-    <section class="row gtr-uniform">KONTAKT:</section>
+      <br> <br>
+    <h2>KONTAKT:</h2>
     <div class="col-6 col-12-xsmall">
       Numer telofonu: <input type="text" name="telefon">
     </div>
     <div class="col-6 col-12-xsmall">
       E-mail: <input type="email" name="email">
     </div>
-    <br>
-    <section class="row gtr-uniform">ADRES:</section>
+    <br> <br>
+    <h2>ADRES:</h2>
     <div class="col-6 col-12-xsmall">
       Ulica: <input type="text" name="ulica">
     </div>
@@ -38,10 +38,10 @@
     </div>
     <br>
     <input type="submit" name="" value="Zapisz">
-  </form>
+  </form><br>
   <div class="col-6 col-12-xsmall">
     <form class="" action="delete_account.php" method="post">
-      Usuń konto: <input type="submit" name="delete" value="Usuń">
+      <h2>Usuń konto:</h2><input type="submit" name="delete" value="Usuń">
     </form>
   </div>
 </section>
