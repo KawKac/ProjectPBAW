@@ -26,6 +26,9 @@ function wrapper($value=0)
     case 7:
       include('delivery.php');
       break;
+    case 8:
+      include('admintools.php');
+      break;
   }
 }
  ?>

@@ -3,8 +3,10 @@ session_start();
 include('database.php');
 if($_SESSION['chmode']!=3)
   echo "Access denied!";
-else { ?>
-  <form action="app/admintools_action.php" method="post">
+else
+{
+  if(!empty($_COOKIE['message'])) echo "<h3>".$_COOKIE['message']."</h3>";
+  ?>
   <table>
     <tr>
       <th class="edit">IMIĘ</th>
@@ -15,10 +17,10 @@ else { ?>
       <th class="edit">USER</th>
       <th class="edit">EMPLOY</th>
       <th class="edit">ADMIN</th>
-      <th class="edit">DEZAKTYWUJ</th>
+      <th class="edit">(DEZ-)AKTYWUJ</th>
     </tr>
 <?php
-    $sql="SELECT `users`.`IMIE`, `users`.`NAZWISKO`, `users`.`LOGIN`, `users`.`E_MAIL`, `users`.`TELEFON`, `users_chmode`.`ID_CHMODE` FROM `users`, `users_chmode` WHERE `users`.`LOGIN` LIKE `users_chmode`.`ID_USERS`";
+    $sql="SELECT `users`.`IMIE`, `users`.`NAZWISKO`, `users`.`LOGIN`, `users`.`E_MAIL`, `users`.`TELEFON`, `users_chmode`.`ID_CHMODE`, `users`.`AKTYWNE` FROM `users`, `users_chmode` WHERE `users`.`LOGIN` LIKE `users_chmode`.`ID_USERS`";
     $wynik = mysqli_query($conn,$sql);
     $i = 0;
     $arr = mysqli_fetch_array($wynik);
@@ -31,25 +33,27 @@ else { ?>
       echo "<td class='edit'>".$row[4]."</td>";
       switch ($row[5]) {
         case 1:
-          echo "<td class='edit'><a href='{url action=}/$arr[$i]}' class='button'>USER</a></td>";
-          echo "<td class='edit'><a href='{url action=}/$arr[$i]}' class='button'>EMPLOY</a></td>";
-          echo "<td class='edit'><a href='{url action=}/$arr[$i]}' class='button'>ADMIN</a></td>";
+          echo "<td class='edit'><a href='app/admintools_action.php?row=".$i."&login=".$row[2]."&chmode=1' class='button'>USER</a></td>";
+          echo "<td class='edit'><a href='app/admintools_action.php?row=".$i."&login=".$row[2]."&chmode=2' class='button'>EMPLOY</a></td>";
+          echo "<td class='edit'><a href='app/admintools_action.php?row=".$i."&login=".$row[2]."&chmode=3' class='button'>ADMIN</a></td>";
           break;
         case 2:
-          echo "<td class='edit'><a href='{url action=}/$arr[$i]}' class='button'>USER</a></td>";
-          echo "<td class='edit'><a href='{url action=}/$arr[$i]}' class='button'>EMPLOY</a></td>";
-          echo "<td class='edit'><a href='{url action=}/$arr[$i]}' class='button'>ADMIN</a></td>";
+          echo "<td class='edit'><a href='app/admintools_action.php?row=".$i."&login=".$row[2]."&chmode=1' class='button'>USER</a></td>";
+          echo "<td class='edit'><a href='app/admintools_action.php?row=".$i."&login=".$row[2]."&chmode=2' class='button'>EMPLOY</a></td>";
+          echo "<td class='edit'><a href='app/admintools_action.php?row=".$i."&login=".$row[2]."&chmode=3' class='button'>ADMIN</a></td>";
           break;
         case 3:
-          echo "<td class='edit'><a href='{/$arr[$i]}' class='button'>USER</a></td>";
-          echo "<td class='edit'><a href='{/$arr[$i]}' class='button'>EMPLOY</a></td>";
-          echo "<td class='edit'><a href='{/$arr[$i]}' class='button'>ADMIN</a></td>";
+          echo "<td class='edit'><a href='app/admintools_action.php?row=".$i."&login=".$row[2]."&chmode=1' class='button'>USER</a></td>";
+          echo "<td class='edit'><a href='app/admintools_action.php?row=".$i."&login=".$row[2]."&chmode=2' class='button'>EMPLOY</a></td>";
+          echo "<td class='edit'><a href='app/admintools_action.php?row=".$i."&login=".$row[2]."&chmode=3' class='button'>ADMIN</a></td>";
           break;
       }
-      echo "<td class='edit'><a href='{/$arr[$i]}'>ADMIN</a></td>";
+      if(intval($row[6])==1)
+        echo "<td class='edit'><a href='app/admintools_action.php?row=".$i."&login=".$row[2]."&dezaktywuj=`0`'>DEZAKTYWUJ</a></td>";
+      elseif (intval($row[6])==0)
+        echo "<td class='edit'><a href='app/admintools_action.php?row=".$i."&login=".$row[2]."&dezaktywuj=`1`'>AKTYWUJ</a></td>";
       echo "</tr>";
     }
-  echo '
-  </table>
-  </form>
-  ';}?>
+  echo '</table>';
+}
+?>
