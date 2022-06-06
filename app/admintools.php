@@ -1,6 +1,7 @@
 <?php
+session_start();
 include('database.php');
-if($_COOKIE['chmode']!=3)
+if($_SESSION['chmode']!=3)
   echo "Access denied!";
 else { ?>
   <form action="app/admintools_action.php" method="post">

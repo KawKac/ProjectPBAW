@@ -1,6 +1,7 @@
 <?php
+  session_start();
   include('database.php');
-  if($_COOKIE['chmode']!=3)
+  if($_SESSION['chmode']!=3)
     echo "Access denied!";
   else {
     if(!(empty($_POST['ean']))&&!(empty($_POST['name']))&&!(empty($_POST['ilosc'])))

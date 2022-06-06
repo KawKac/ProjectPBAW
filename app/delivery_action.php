@@ -1,5 +1,4 @@
 <?php
-
 include("database.php");
 $delivery=$_POST['delivery'];
 $sql=mysqli_fetch_assoc(mysqli_query($conn,"SELECT * FROM `orders` WHERE `ID_NOOW`='$delivery'"));

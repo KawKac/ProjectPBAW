@@ -14,7 +14,7 @@ foreach (glob("assets/js/*.js") as $filename)	if(!($filename=="assets/js/main.js
 			<section id="sidebar">
 				<?php
 					include('check.php');
-					check($_COOKIE['chmode']);
+					check($_SESSION['chmode']);
 				?>
 			</section>
 

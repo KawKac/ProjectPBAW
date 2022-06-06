@@ -1,8 +1,9 @@
 <?php
+session_start();
 include('database.php');
-$login=$_COOKIE['user'];
+$login=$_SESSION['user'];
 $i=intval('0');
-if(!empty($_POST['password'])){$sql[$i]="UPDATE `users` SET `HASLO` = '".md5($_POST['password'])."' WHERE `LOGIN`='$login'";$i++;}
+if(!empty($_POST['password'])&&!empty($_POST['ppassword'])&&($_POST['password']==$_POST['ppassword'])){$sql[$i]="UPDATE `users` SET `HASLO` = '".md5($_POST['password'])."' WHERE `LOGIN`='$login'";$i++;}
 if(!empty($_POST['telefon'])){$sql[$i]="UPDATE `users` SET `TELEFON` = '".$_POST['telefon']."' WHERE `LOGIN`='$login'";$i++;}
 if(!empty($_POST['email'])){$sql[$i]="UPDATE `users` SET `E_MAIL` = '".$_POST['email']."' WHERE `LOGIN`='$login'";$i++;}
 if(!empty($_POST['ulica'])){$sql[$i]="UPDATE `users` SET `ULICA` = '".$_POST['ulica']."' WHERE `LOGIN`='$login'";$i++;}

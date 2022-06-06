@@ -1,5 +1,6 @@
 <?php
-if($_COOKIE['chmode']!=3)
+session_start();
+if($_SESSION['chmode']!=3)
   echo "Access denied!";
 else {
   echo '
