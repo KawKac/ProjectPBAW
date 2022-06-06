@@ -3946,5 +3946,10 @@ table{
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
-	font-size: 18.5px;
+	font-size: 17px;
+}
+
+.b_login
+{
+	color:black;
 }
