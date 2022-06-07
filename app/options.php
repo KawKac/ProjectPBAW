@@ -43,5 +43,5 @@
     <form class="" action="delete_account.php" method="post">
       <h2>Usuń konto:</h2><input type="submit" name="delete" value="Usuń">
     </form>
-  </div>
+  </div> 
 </section>

@@ -19,4 +19,4 @@ while($sql[$i])
 mysqli_close($conn);
 setcookie('info','4',time()+1800,'/');
 header("Location: ../")
- ?>
+ ?> 

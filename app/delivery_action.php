@@ -5,9 +5,9 @@ $sql=mysqli_query($conn,"SELECT `STATUS` FROM `orders` WHERE `ID_NOOW`='$d'")or 
 $row=mysqli_num_rows($sql);
 if($row!=0)
 {
-  setcookie('deliwery',"twojastara",time()+10,'/');
+
 }
-else {
-  setcookie('deliwery',"twójstary",time()+10,'/');
+else
+{
+  
 }
-echo $_COOKIE["deliwery"];
