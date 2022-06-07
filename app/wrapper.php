@@ -1,10 +1,7 @@
 <?php
-function wrapper($value=0)
+function wrapper($value=7)
 {
   switch ($value) {
-    case 0:
-      include('home.php');
-      break;
     case 1:
       include('login.php');
       break;
@@ -28,6 +25,9 @@ function wrapper($value=0)
       break;
     case 8:
       include('admintools.php');
+      break;
+    default:
+      include('delivery.php');
       break;
   }
 }
