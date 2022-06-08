@@ -26,6 +26,9 @@ function wrapper($value=7)
     case 8:
       include('admintools.php');
       break;
+    case 9:
+      include('twojezamowienia.php');
+      break;
     default:
       include('delivery.php');
       break;

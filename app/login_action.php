@@ -11,7 +11,17 @@
 			$chmode=mysqli_fetch_array(mysqli_query($conn,"SELECT `ID_CHMODE` FROM `users_chmode` WHERE `ID_USERS` LIKE '$login'"));
 			$_SESSION['chmode']=intval($chmode['ID_CHMODE']);
 			$_SESSION['user']=$login;
-			setcookie('info','0',time()+1,'/');
+			switch ($_SESSION['chmode']) {
+				case '1':
+					setcookie('info','9',time()+1,'/');
+					break;
+				case '2':
+					setcookie('info','6',time()+1,'/');
+					break;
+				case '3':
+					setcookie('info','8',time()+1,'/');
+					break;
+			}
 			header("Location: ../");
 		}
 		else
